@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "opposingmonkey",
+  "risk": "3",
+  "title": "The 'registerSwapper' and 'registerBridge' functions in 'UTB.sol' allow overriding existing swapper/bridge IDs, which could lead to lost user funds",
+  "issueId": 21,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/21"
+}
