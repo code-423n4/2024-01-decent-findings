@@ -1,0 +1,11 @@
+{
+  "contest": 322,
+  "handle": "vuln-detector",
+  "crew": [
+    "oualidpro"
+  ],
+  "risk": "2",
+  "title": "Large transfers may not work with some `ERC20` tokens",
+  "issueId": 6,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/6"
+}
