@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "simplor",
+  "risk": "3",
+  "title": "Anyone can call `DcntEth.setRouter()` and set to any address",
+  "issueId": 22,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/22"
+}
