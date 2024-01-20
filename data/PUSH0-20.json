@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "PUSH0",
+  "risk": "3",
+  "title": "`DcntEth.sol`: No access control for `setRouter()`, anyone can set it as themselves and infinitely mint tokens",
+  "issueId": 20,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/20"
+}
