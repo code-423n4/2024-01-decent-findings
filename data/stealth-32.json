@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "stealth",
+  "risk": "3",
+  "title": "The setRouter function can be called by any user, allowing them to set themselves as the router and mint or burn tokens at will.",
+  "issueId": 32,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/32"
+}
