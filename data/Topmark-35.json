@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "Topmark",
+  "risk": "3",
+  "title": "Omission of Deadline Key in Uniswap V3 Protocol’s exactInput Function",
+  "issueId": 35,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/35"
+}
