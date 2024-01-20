@@ -36,6 +36,8 @@ A validator might postpone the transaction until market conditions, such as slip
 ## Recommendation
 It's recommended to add a proper `deadline` param according to [parameter-structs](https://docs.uniswap.org/contracts/v3/reference/periphery/interfaces/ISwapRouter#parameter-structs).
 
+--- 
+
 # Missing Non-Zero Address Check for Return Value of `ecrecover()`
 
 ## Lines
@@ -59,3 +61,46 @@ In the current contract code, if `ecrecover` fails due to an invalid signature, 
 
 ## Recommendation
 It is advisable to implement a check ensuring that the `ecrecover()` function does not return a zero address before proceeding with operations dependent on its outcome.
+
+---
+
+# Incompatible with tax token
+
+## Lines
+https://github.com/code-423n4/2024-01-decent/blob/07ef78215e3d246d47a410651906287c6acec3ef/src/UTB.sol#L236C1-L244C19
+
+https://github.com/code-423n4/2024-01-decent/blob/07ef78215e3d246d47a410651906287c6acec3ef/src/UTBFeeCollector.sol#L56C1-L59C31
+
+## Description
+In the `UTB` contract, the process for handling transaction fees involves initially transferring the fee to the `UTB` contract, followed by a transfer to the `FeeCollector` contract. 
+The current implementation doesn't consider any potential transfer tax imposed by the fee token itself. 
+Tokens with an embedded transfer tax deduct a certain percentage from each transaction as a fee. 
+Consequently, when such a token is transferred, the amount received by the final recipient is reduced by the tax fee. 
+This means that the `FeeCollector` contract would receive an amount less than what was initially sent due to the tax incurred during the transfer process.
+
+## Recommendation
+It is advisable to account for the possibility of transfer taxes when dealing with fee tokens. 
+If the token includes a transfer tax, the contract code should be adapted to manage such scenarios appropriately. 
+
+---
+
+# Miss Error Message
+
+## Lines
+https://github.com/code-423n4/2024-01-decent/blob/07ef78215e3d246d47a410651906287c6acec3ef/src/UTBOwned.sol#L12C1-L12C36
+
+## Description
+The `onlyUtb` modifier is designed to restrict the execution of certain contract functions to the address stored in the `utb` variable. 
+However, the `require` statement within this modifier does not include an error message to be emitted if the condition `msg.sender == utb` fails:
+
+```solidity
+    modifier onlyUtb() {
+        require(msg.sender == utb);
+        _;
+    }
+```
+
+It is considered best practice to provide an error message so that if the `require` condition is not met, an informative revert reason is provided to the user or calling contract.
+
+## Recommendation
+Recommending add an error message. 
