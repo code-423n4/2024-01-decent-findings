@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "51l3nt",
+  "risk": "3",
+  "title": "UniSwapper.swapExactOut allows Sandwich attacks (front-run and back-run)",
+  "issueId": 38,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/38"
+}
