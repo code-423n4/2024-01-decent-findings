@@ -89,9 +89,11 @@ If the token includes a transfer tax, the contract code should be adapted to man
 ## Lines
 https://github.com/code-423n4/2024-01-decent/blob/07ef78215e3d246d47a410651906287c6acec3ef/src/UTBOwned.sol#L12C1-L12C36
 
+https://github.com/decentxyz/decent-bridge/blob/7f90fd4489551b69c20d11eeecb17a3f564afb18/src/DcntEth.sol#L9C1-L9C39
+
 ## Description
-The `onlyUtb` modifier is designed to restrict the execution of certain contract functions to the address stored in the `utb` variable. 
-However, the `require` statement within this modifier does not include an error message to be emitted if the condition `msg.sender == utb` fails:
+The `onlyUtb` or `onlyRouter` modifier is designed to restrict the execution of certain contract functions to a certain address. 
+However, the `require` statement within this modifier does not include an error message to be emitted if the condition fails:
 
 ```solidity
     modifier onlyUtb() {
@@ -100,7 +102,15 @@ However, the `require` statement within this modifier does not include an error 
     }
 ```
 
+```solidity
+    modifier onlyRouter() {
+        require(msg.sender == router);
+        _;
+    }
+```
+
+
 It is considered best practice to provide an error message so that if the `require` condition is not met, an informative revert reason is provided to the user or calling contract.
 
 ## Recommendation
-Recommending add an error message. 
+Recommending add the missing error messages. 
