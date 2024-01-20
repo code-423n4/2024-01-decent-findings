@@ -22,6 +22,8 @@ pragma solidity 0.8.0;
 Lack of `zero-address validation` on `address parameters` may lead to `transaction reverts, waste gas, require resubmission of transactions and may even force contract redeployments` in certain cases within the protocol.
 
 ### Instances:
+- https://github.com/code-423n4/2024-01-decent/blob/main/src%2Fswappers%2FUniSwapper.sol#L104
+- https://github.com/code-423n4/2024-01-decent/blob/main/src%2Fswappers%2FUniSwapper.sol#L125
 
 ### Recommendation
 Consider adding explicit zero-address validation on input parameters of address type.
