@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "dd0x7e8",
+  "risk": "2",
+  "title": "Return value of low level `call` not checked",
+  "issueId": 25,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/25"
+}
