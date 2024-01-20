@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "Strausses",
+  "risk": "3",
+  "title": "Attacker can get unwanted/unplanned approve on WETH",
+  "issueId": 28,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/28"
+}
