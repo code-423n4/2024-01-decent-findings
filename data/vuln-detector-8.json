@@ -1,0 +1,11 @@
+{
+  "contest": 322,
+  "handle": "vuln-detector",
+  "crew": [
+    "oualidpro"
+  ],
+  "risk": "2",
+  "title": "Contracts are vulnerable to fee-on-transfer accounting-related issues",
+  "issueId": 8,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/8"
+}
