@@ -26,3 +26,13 @@ Lack of `zero-address validation` on `address parameters` may lead to `transacti
 ### Recommendation
 Consider adding explicit zero-address validation on input parameters of address type.
 
+# [03] Missing or Incomplete NatSpec
+
+### Description
+Some functions are missing `@notice/@dev` NatSpec comments for the function, `@param` for all/some of their parameters and `@return` for return values. Given that NatSpec is an important part of code documentation, this affects code comprehension, auditability and usability.
+
+### Instances:
+All contracts
+
+### Recommendation
+> Consider adding in full NatSpec comments for all functions to have complete code documentation for future use.
