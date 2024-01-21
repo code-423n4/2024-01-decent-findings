@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "0xBugSlayer",
+  "risk": "3",
+  "title": "Malicious user can set the router address to himself",
+  "issueId": 64,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/64"
+}
