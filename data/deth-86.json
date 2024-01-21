@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "deth",
+  "risk": "3",
+  "title": "DcntEth.sol#setRouter() - The function has no access control, allowing anyone to set themselves as a ` router `  and mint and burn tokens freely",
+  "issueId": 86,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/86"
+}
