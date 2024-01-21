@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "nmirchev8",
+  "risk": "2",
+  "title": "`DecentEthRouter::redeemEth` misses `onlyEthChain` modifier, which could result in user fund losses",
+  "issueId": 61,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/61"
+}
