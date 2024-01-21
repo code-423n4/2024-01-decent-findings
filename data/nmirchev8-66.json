@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "nmirchev8",
+  "risk": "2",
+  "title": "`DecentEthRouter::bridge/bridgeWithPayload` can directly be called, which bypasses UTB main entry point with signature",
+  "issueId": 66,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/66"
+}
