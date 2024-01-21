@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "deth",
+  "risk": "2",
+  "title": "UTBExecutor.sol#execute() - The ` target `  address can gas bomb/return bomb users, forcing them to pay massive amounts of gas.",
+  "issueId": 70,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/70"
+}
