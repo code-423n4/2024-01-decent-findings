@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "kutugu",
+  "risk": "2",
+  "title": "UTBFeeCollector does not prevent double-spend attack. If the fee is dynamic, which may be exploited.",
+  "issueId": 42,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/42"
+}
