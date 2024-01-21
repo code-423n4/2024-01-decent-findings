@@ -228,4 +228,85 @@ if (token == address(0)) {
 The above can replace the 3 `target.call(payload)` call since its the same `target` address and `payload`.
 
 
+## [L-6] No `deadline` and address zero check for signatures
+
+There is one instance of this
+- https://github.com/code-423n4/2024-01-decent/blob/07ef78215e3d246d47a410651906287c6acec3ef/src/UTBFeeCollector.sol#L44C5-L63C1
+
+The `collectFees(...)` function of the UTBFeeCollector.sol contract verifies signature without a `deadline`.
+
+Secondly there is no check to ensure the `recovered` address is not zero address. This is because ecrecover can return address zero for invalid signature.
+
+Lastly there is no use of nonce for the signatures.
+```
+function collectFees(
+        FeeStructure calldata fees,
+        bytes memory packedInfo,
+        bytes memory signature
+    ) public payable onlyUtb {
+        bytes32 constructedHash = keccak256(
+            abi.encodePacked(BANNER, keccak256(packedInfo))
+        );
+        (bytes32 r, bytes32 s, uint8 v) = splitSignature(signature);
+        address recovered = ecrecover(constructedHash, v, r, s);
+        require(recovered == signer, "Wrong signature");
+        if (fees.feeToken != address(0)) {
+            IERC20(fees.feeToken).transferFrom(
+                utb,
+                address(this),
+                fees.feeAmount
+            );
+        }
+    }
+```
+
+Impact: 
+- Invalid signature can be used before the `signer` state variable is set since it will initially be zero. 
+- Signature have no deadline and can be executed anytime
+
+Recommendation:
+Implement `deadline` to signatures and also add address zero check on the recovered address. 
+```
+require(blocktimestamp >= deadline, "signature expired");
+require(recovered != address(0), "signature expired");
+```
+See EIP712: https://eips.ethereum.org/EIPS/eip-712
+
+
+## [L-7] `ecrecover` is susceptible to signature malleability
+There is 1 instance of this
+- https://github.com/code-423n4/2024-01-decent/blob/07ef78215e3d246d47a410651906287c6acec3ef/src/UTBFeeCollector.sol#L53
+
+The `collectFees(...)` function uses built in `ecrecover(...)` to recover the address of the signer. The `ecrecover(...)` function is succeptible to signature malleability
+
+```
+File: UTBFeeCollector.sol
+function collectFees(
+        FeeStructure calldata fees,
+        bytes memory packedInfo,
+        bytes memory signature
+    ) public payable onlyUtb {
+        bytes32 constructedHash = keccak256(
+            abi.encodePacked(BANNER, keccak256(packedInfo))
+        );
+        (bytes32 r, bytes32 s, uint8 v) = splitSignature(signature);//@audit no deadline for signature
+        address recovered = ecrecover(constructedHash, v, r, s);
+        require(recovered == signer, "Wrong signature");//@audit  check that sig is not zero addresss.
+        if (fees.feeToken != address(0)) {
+            IERC20(fees.feeToken).transferFrom(
+                utb,
+                address(this),
+                fees.feeAmount
+            );
+        }
+    }
+```
+Impact: 
+
+Signature malleability leading to potential signature replay attack since there is even no nonce implemented.
+
+Recommendation:
+Consider using openzeppelin's `ECDSA.ecrecover(...)` function instead of the built in `ecrecover`.
+
+OZ's ECDSA: https://github.com/OpenZeppelin/openzeppelin-contracts/blob/e5c63635e3508a8d9d0afed091578cc4bb59a9c7/contracts/utils/cryptography/ECDSA.sol#L154
 
