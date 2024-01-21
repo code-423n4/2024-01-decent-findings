@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "adeolu",
+  "risk": "3",
+  "title": "target can do a double spend of WETH when owner trying to execute weth transfers via _executeWETH()",
+  "issueId": 40,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/40"
+}
