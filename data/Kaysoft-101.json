@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "Kaysoft",
+  "risk": "3",
+  "title": "Attacker can mint any amount of tokens on all chains because DcntEth.sol#setRouter(...) function lacks access control.",
+  "issueId": 101,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/101"
+}
