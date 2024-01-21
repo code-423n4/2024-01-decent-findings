@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "kutugu",
+  "risk": "2",
+  "title": "StargateBridgeAdapter.bridge does not check whether postBridge.swapPayload is valid, causing sgReceive to fail and the funds to be stuck in the contract.",
+  "issueId": 100,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/100"
+}
