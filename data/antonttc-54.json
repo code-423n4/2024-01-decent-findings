@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "antonttc",
+  "risk": "2",
+  "title": "UTCFeeCollector signature can be re-used to avoid protocol fees",
+  "issueId": 54,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/54"
+}
