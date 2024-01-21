@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "mrudenko",
+  "risk": "3",
+  "title": "Missing Access Control in `setRouter` Function of DcntEth Contract - anyone can set router",
+  "issueId": 109,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/109"
+}
