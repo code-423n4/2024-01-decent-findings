@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "deth",
+  "risk": "3",
+  "title": "StargateBridgeAdapter.sol - If a to ` sqReceive `  fails, the tokens will still be transferred to the StargateBridgeAdapter, making them stuck in the contract",
+  "issueId": 68,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/68"
+}
