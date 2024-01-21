@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "deepplus",
+  "risk": "2",
+  "title": "Since `performSwap` function doesn't refund left ether, users may lose their left fund.",
+  "issueId": 75,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/75"
+}
