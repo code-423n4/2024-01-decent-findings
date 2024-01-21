@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "kutugu",
+  "risk": "2",
+  "title": "UniSwapper's swapExactIn and swapExactOut have no expiration time protection",
+  "issueId": 80,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/80"
+}
