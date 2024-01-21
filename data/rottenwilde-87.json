@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "rottenwilde",
+  "risk": "3",
+  "title": "The Uniswapper contract allows draining the contract ERC20 tokens by a malicious contract that executes the swapNoPath function. ",
+  "issueId": 87,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/87"
+}
