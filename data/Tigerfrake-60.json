@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "Tigerfrake",
+  "risk": "3",
+  "title": "Potential Reentrancy Vulnerability in removeLiquidityEth Function Due to Misuse of Modifiers",
+  "issueId": 60,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/60"
+}
