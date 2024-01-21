@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "haxatron",
+  "risk": "2",
+  "title": "Users may lose their cross-chain transaction if the destination router do not have enough WETH / ETH reserves.",
+  "issueId": 59,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/59"
+}
