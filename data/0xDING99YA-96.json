@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "0xDING99YA",
+  "risk": "2",
+  "title": "\"swapExactIn()\" and \"swapExactOut()\" in \"UniSwapper.sol\" use wrong assumption and can get user's fund stuck",
+  "issueId": 96,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/96"
+}
