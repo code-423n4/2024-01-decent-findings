@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "0xDING99YA",
+  "risk": "3",
+  "title": "Attackers can steal any ERC20 token stuck in the \"UniSwapper.sol\"",
+  "issueId": 98,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/98"
+}
