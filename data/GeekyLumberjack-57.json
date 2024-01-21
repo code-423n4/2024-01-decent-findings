@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "GeekyLumberjack",
+  "risk": "3",
+  "title": "Public setRouter allows draining all funds in DecentEthRouter.sol",
+  "issueId": 57,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/57"
+}
