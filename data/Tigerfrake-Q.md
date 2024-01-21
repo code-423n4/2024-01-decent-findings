@@ -38,3 +38,18 @@ All contracts
 
 ### Recommendation
 > Consider adding in full NatSpec comments for all functions to have complete code documentation for future use.
+
+# [04] Undocumented Value Literal
+### Description:
+The value literal 100000 is hardcoded to a constant variable GAS_FOR_RELAY:
+
+```Solidity
+GAS_FOR_RELAY = 100000;
+```
+However, it is undocumented and unclearly depicted.
+
+### Instance:
+https://github.com/decentxyz/decent-bridge/blob/main/src%2FDecentEthRouter.sol#L96
+
+### Recommendation:
+We advise the special underscore (_) separator to be applied to it (i.e. 100000 would become 100_000) 
