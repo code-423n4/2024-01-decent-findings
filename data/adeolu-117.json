@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "adeolu",
+  "risk": "2",
+  "title": "deadline not set when swapping with uniswapV3. 0 amount as deadline will always revert. ",
+  "issueId": 117,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/117"
+}
