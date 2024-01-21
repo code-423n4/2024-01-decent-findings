@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "Beepidibop",
+  "risk": "3",
+  "title": "`UTBExecutor`: The Payable Version of `execute()` Doesn't Pass `extraNative` as an Input for Subsequent Calls If It Receives ETH",
+  "issueId": 85,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/85"
+}
