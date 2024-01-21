@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "adeolu",
+  "risk": "3",
+  "title": "target not approved to spend the tokens during a swapAndExecute in UTBExecutor.sol",
+  "issueId": 105,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/105"
+}
