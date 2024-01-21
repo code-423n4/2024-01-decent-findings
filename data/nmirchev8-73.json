@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "nmirchev8",
+  "risk": "3",
+  "title": "`UTB::receiveFromBridge` can be directly called with any arbitrary calldata, which can harm the protocol by executing arbitrary transaction on behalf of ``UtbExecutor`",
+  "issueId": 73,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/73"
+}
