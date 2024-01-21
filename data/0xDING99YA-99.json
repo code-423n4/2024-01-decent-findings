@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "0xDING99YA",
+  "risk": "2",
+  "title": "\"UniSwapper.sol\" will not work for some tokens due to the implementation of \"swapExactOut()\"",
+  "issueId": 99,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/99"
+}
