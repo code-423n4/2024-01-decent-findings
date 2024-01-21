@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "nmirchev8",
+  "risk": "2",
+  "title": "FeeCollector signature can be used unlimited times and on each chain, which could lead to different fees from expected being transferred",
+  "issueId": 69,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/69"
+}
