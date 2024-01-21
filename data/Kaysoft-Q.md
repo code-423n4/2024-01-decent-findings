@@ -309,5 +309,114 @@ Consider using openzeppelin's `ECDSA.ecrecover(...)` function instead of the bui
 
 OZ's ECDSA: https://github.com/OpenZeppelin/openzeppelin-contracts/blob/e5c63635e3508a8d9d0afed091578cc4bb59a9c7/contracts/utils/cryptography/ECDSA.sol#L154
 
-## [L-8] 
+## [L-8] Lack of `deadline` protection for swap
+There are 2 instances of these
+- https://github.com/code-423n4/2024-01-decent/blob/07ef78215e3d246d47a410651906287c6acec3ef/src/swappers/UniSwapper.sol#L153
+- https://github.com/code-423n4/2024-01-decent/blob/07ef78215e3d246d47a410651906287c6acec3ef/src/swappers/UniSwapper.sol#L130C13-L134C55
 
+The `swapExactIn` and `swapExactOut` functions did not add `deadline` protection on swap. 
+This can allow a miner delay your transaction from being mined until the swap transaction incurs maximum slippage that would allow the miner profit from the swap transaction through sandwich attack.
+
+According to the Uniswap docs: 
+
+>deadline: the unix time after which a swap will fail, to protect against long->pending transactions and wild swings in prices
+
+During high price swings, a miner can delay the transaction as possible until it incurs maximum slippage since there is no unix timestamp supplied at which the swap transaction must revert.
+```
+File: Uniswapper.sol
+function swapExactIn(
+        SwapParams memory swapParams, // SwapParams is a struct
+        address receiver
+    ) public payable routerIsSet returns (uint256 amountOut) {
+        swapParams = _receiveAndWrapIfNeeded(swapParams);
+
+        IV3SwapRouter.ExactInputParams memory params = IV3SwapRouter
+            .ExactInputParams({
+                path: swapParams.path,
+                recipient: address(this),
+                amountIn: swapParams.amountIn,
+                amountOutMinimum: swapParams.amountOut
+            });//@audit no deadline specified.
+
+        IERC20(swapParams.tokenIn).approve(uniswap_router, swapParams.amountIn);
+        amountOut = IV3SwapRouter(uniswap_router).exactInput(params);
+
+```
+
+Impact:
+Loss of asset through a combination of swap transaction delay and sandwich attack to profit from some slippage due to market swings.
+
+Recommendation:
+Allow users to pass a `deadline` for example 20 minutes in the future at which a swap transaction must fail if it has not been executed.
+
+This is handled by most swap frontends like Uniswap frontend. A user just gets to choose how many minutes in the future should be set as the `deadline` for the swap.
+The user can select for example 20 minutes on the frontend and the frontend handles the calculation of the timestamp literal to be supplied to the swap function.
+
+For example deadline is `unix timestamp` + `20 minutes`.
+ 
+`unix timestamp` = `number of seconds from 1970 till the current moment` = `block.timestamp`.
+`20 minutes` = 20 * 60.
+
+deadline = 2578383 + 1800  = 2579583 seconds.
+ 
+
+## [L-9] `_sendToRecipient(...)` is unnecessary if the `receiver` is passed as the `receipient` of the swap parameter.
+
+There are 2 instances of this
+- https://github.com/code-423n4/2024-01-decent/blob/07ef78215e3d246d47a410651906287c6acec3ef/src/swappers/UniSwapper.sol#L130C13-L140C68
+- https://github.com/code-423n4/2024-01-decent/blob/07ef78215e3d246d47a410651906287c6acec3ef/src/swappers/UniSwapper.sol#L150C13-L168C79
+
+The `swapExactIn(...)` and the `swapExactOut(...)` did a two way movement of output asset by first sending the output asset of the swap to `address(this)` before sending it to the receiver.
+
+It is much more efficient to pass the `receiver` parameter as the `recipient` address in the swap param in order to directly send asset to the `receiver`.
+
+With this there will be no need for the `_sendToRecipient(...)` function since swap output will be sent directly.
+
+```
+function swapExactIn(
+        SwapParams memory swapParams, // SwapParams is a struct
+        address receiver
+    ) public payable routerIsSet returns (uint256 amountOut) {
+        swapParams = _receiveAndWrapIfNeeded(swapParams);
+
+        IV3SwapRouter.ExactInputParams memory params = IV3SwapRouter
+            .ExactInputParams({
+                path: swapParams.path,
+@>                recipient: address(this),//@audit pass receiver here
+                amountIn: swapParams.amountIn,
+                amountOutMinimum: swapParams.amountOut
+            });
+
+        IERC20(swapParams.tokenIn).approve(uniswap_router, swapParams.amountIn);
+        amountOut = IV3SwapRouter(uniswap_router).exactInput(params);
+
+@>        _sendToRecipient(receiver, swapParams.tokenOut, amountOut);
+    }
+
+```
+
+Impact:
+Waste of gas and adds more unnecessary codes to the codebase which could open more attack surface for vulnerabilities.
+
+Recommendation:
+Consider passing the `receiver` parameter to the ExactInputParams' `receipient` like in this diff below
+```diff
+function swapExactIn(...) {
+...
+  IV3SwapRouter.ExactInputParams memory params = IV3SwapRouter
+            .ExactInputParams({
+                path: swapParams.path,
+--              recipient: address(this),
+++              recipient: receiver,
+                amountIn: swapParams.amountIn,
+                amountOutMinimum: swapParams.amountOut
+            });
+
+        IERC20(swapParams.tokenIn).approve(uniswap_router, swapParams.amountIn);
+        amountOut = IV3SwapRouter(uniswap_router).exactInput(params);
+
+--      _sendToRecipient(receiver, swapParams.tokenOut, amountOut);
+}
+```
+
+ 
