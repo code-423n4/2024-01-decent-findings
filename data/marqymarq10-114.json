@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "marqymarq10",
+  "risk": "3",
+  "title": "Unchecked low level calls can lead to the `UTBExecutor` smart contract to get blacklisted from using USDC.",
+  "issueId": 114,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/114"
+}
