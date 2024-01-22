@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "n1punp",
+  "risk": "2",
+  "title": "Missing `payable` in the `UTBExecutor.execute` function -> tx can revert.",
+  "issueId": 337,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/337"
+}
