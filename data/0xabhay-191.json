@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "0xabhay",
+  "risk": "2",
+  "title": "Insufficient Balance Check in `UTBFeeCollector.sol::redeemFees`",
+  "issueId": 191,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/191"
+}
