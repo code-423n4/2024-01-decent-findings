@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "ravikiranweb3",
+  "risk": "3",
+  "title": "Token transfer may fail silently leading to inaccurate accounting in the protocol, problem exist across many contracts",
+  "issueId": 127,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/127"
+}
