@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "Greed",
+  "risk": "3",
+  "title": "An attacker can steal the ERC20 tokens held by the `UniSwapper` contract by supplying specially crafted parameters to `swapNoPath()`",
+  "issueId": 287,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/287"
+}
