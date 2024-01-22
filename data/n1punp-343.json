@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "n1punp",
+  "risk": "3",
+  "title": "Ethereum mainnet USDT tokens will get stuck in the `UTBFeeCollector.sol` contract forever",
+  "issueId": 343,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/343"
+}
