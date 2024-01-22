@@ -2,7 +2,7 @@
 
 ### [L-1] `UTB::registerSwapper()` and `UTB::registerBridge()` do not validate input's existence
 
-`UTB::registerSwapper()` and `UTB::registerBridge()` lets owners of the `UTB` contract overwrite existing data in the mappings without performing any checks:
+`UTB::registerSwapper()` and `UTB::registerBridge()` let owners of the `UTB` contract overwrite existing data in the mappings without performing any checks:
 
 ```solidity
 /**
@@ -24,9 +24,9 @@ function registerBridge(address bridge) public onlyOwner {
 }
 ```
 
-In my opinion, calls should check if the swappers and bridge adapters already exist and if they do, revert. An optional second param can be used to mandate to the function whether it should perform a replacement or new creation. This could help prevent `bridgeAdapters` and `swappers` accidentally being overwritten with wrong ones.
+In my opinion, calls should check if the swappers and bridge adapters already exist and if they do, revert. An optional second param can be used to mandate to the function whether it should perform a replacement or new creation. This could help prevent `bridgeAdapters` and `swappers` accidentally being overwritten with the wrong ones.
 
-### [L-2] Lack of specifiable gas limit some external calls
+### [L-2] Lack of specifiable gas limit on some external calls
 
 Users can't control gas limit for external calls. This might lead to their gas being consumed unexpectedly.
 
@@ -72,7 +72,7 @@ To mitigate, the require statement inside the modifier should be changed to:
 require(weth.balanceOf(address(this)) >= amount, "not enough reserves");
 ```
 
-### [L-4] `DecentBridgeAdapter::estimateFees()` and `DecentBridgeAdapter::bridge()` does not check if `dstChainId` is valid.
+### [L-4] `DecentBridgeAdapter::estimateFees()` and `DecentBridgeAdapter::bridge()` do not check if `dstChainId` is valid.
 
 ```solidity
 function estimateFees(
@@ -99,7 +99,7 @@ return
 }
 ```
 
-Passing in an unsupported `dstChainId` will lead to the call reverting and the caller having their gas lost unexpectedly. Consider checking the if the `dstChainId` is already in the `lzIdLookup` mapping before proceeding with the `router` call.
+Passing in an unsupported `dstChainId` will lead to the call reverting and the caller having their gas lost unexpectedly. Consider checking if the `dstChainId` is already in the `lzIdLookup` mapping before proceeding with the `router` call.
 
 ### [L-5] `UTB::performSwap()` does not strictly impose that `msg.value == swapParams.amountIn`, leading to potential loss of funds
 
