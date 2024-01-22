@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "NentoR",
+  "risk": "3",
+  "title": "Uniswap V3 calls will revert with `Transaction too old` due to missing deadline param",
+  "issueId": 172,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/172"
+}
