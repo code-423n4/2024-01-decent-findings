@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "DarkTower",
+  "risk": "3",
+  "title": "Missing Access Control in `DcntEth::setRouter` allows attackers to take control over `onlyRouter` controlled functions.",
+  "issueId": 205,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/205"
+}
