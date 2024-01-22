@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "kodyvim",
+  "risk": "2",
+  "title": "onlyIfWeHaveEnoughReserves could deny withdrawal even if contract has enough balance",
+  "issueId": 228,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/228"
+}
