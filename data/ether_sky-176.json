@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "ether_sky",
+  "risk": "2",
+  "title": "Tokens can be refunded to the Bridge Adapter in the event of a failed external call.",
+  "issueId": 176,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/176"
+}
