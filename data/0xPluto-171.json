@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "0xPluto",
+  "risk": "3",
+  "title": "the setRouter( ) function in DcnEth.sol lacks access control",
+  "issueId": 171,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/171"
+}
