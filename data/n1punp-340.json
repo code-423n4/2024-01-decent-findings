@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "n1punp",
+  "risk": "3",
+  "title": "Missing ETH call success check -> . ETH may not successfully transfer out and get stuck in the UTBExecutor contract.",
+  "issueId": 340,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/340"
+}
