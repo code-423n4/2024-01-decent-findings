@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "mussucal",
+  "risk": "2",
+  "title": "In Uniswapper.sol, the function swapNoPath() tries to send tokenOut to receiver which Uniswapper.sol never received..",
+  "issueId": 251,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/251"
+}
