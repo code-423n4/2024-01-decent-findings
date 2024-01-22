@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "btk",
+  "risk": "2",
+  "title": "collectFees is vulnerable to signature forgery",
+  "issueId": 218,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/218"
+}
