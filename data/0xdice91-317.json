@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "0xdice91",
+  "risk": "3",
+  "title": "An Attacker can change the router in `DcntEth.sol` to mint, burn, and steal funds from the users and the protocol.",
+  "issueId": 317,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/317"
+}
