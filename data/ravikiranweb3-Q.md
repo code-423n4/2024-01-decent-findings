@@ -16,3 +16,6 @@ Modifiers should be used to validate data, enforce access control, but state var
 #### 6) UTB::performSwap
 In the performSwap() function, check for existence of swapper based on swapInstructions.swapperId in the swappers map before operating on the object.
 Incase the swapper did not exist, it would revert.
+
+#### 7) UTB::receiveFromBridge
+In the receiveFromBridge() function, validate the refund to be an EOA. If he refund happens to be a smart contract that does not accept ether, the transaction will revert. 
