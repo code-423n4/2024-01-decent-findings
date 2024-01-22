@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "nobody2018",
+  "risk": "3",
+  "title": "DcntEth.setRouter lacks access control",
+  "issueId": 272,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/272"
+}
