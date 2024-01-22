@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "MrPotatoMagic",
+  "risk": "3",
+  "title": "Users can bypass fees by using receiveFromBridge() function directly in UTB.sol",
+  "issueId": 214,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/214"
+}
