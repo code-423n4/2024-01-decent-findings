@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "n1punp",
+  "risk": "3",
+  "title": "`UTB.performSwap` will not work with Ethereum's mainnet USDT due to incompatible ERC20 standard.",
+  "issueId": 332,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/332"
+}
