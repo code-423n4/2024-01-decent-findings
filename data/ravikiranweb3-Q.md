@@ -1,0 +1,2 @@
+#### 1) UTBFeeCollector::collectFees() 
+validates the signature against the constructed hash from packedInfo. There is no nonce opening for replay attack. The layer of protection is only utb access and hence a low as best practices was not followed.
