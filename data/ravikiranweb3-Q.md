@@ -9,3 +9,6 @@ Destination chain id should be checked at the beginning of the function.But, ins
 variable can be declared as immutable to save gas.
 #### 4) DecentBridgeAdapter::gasIsEth  
 variable can be declared as immutable to save gas.
+
+#### 5) DecentEthRouter::userDepositing && userIsWithdrawing modifiers
+Modifiers should be used to validate data, enforce access control, but state variable update should be done only in functions. This is not the best practices.
