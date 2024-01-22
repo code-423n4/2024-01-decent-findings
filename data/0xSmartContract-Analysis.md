@@ -402,7 +402,8 @@ DecentEthRouter.sol
 + import {Owned} from "solmate/auth/Owned.sol";
 
 ```
-
+</br>
+</br>
 
 ✅ In a network, for example, in this example the Polygon network has been chosen, native token can be sent on its own, this is done with the `swapAndExecute` function, it is not possible to send to another address, they can only be sent to themselves, this can be prevented with a require or it can be prevented from doing this on the website, because nobody It does not send native tokens as its own account receiver and its own account sender, but it may happen by mistake
 
@@ -429,6 +430,109 @@ src/UTB.sol:
 ```
 
 <img width="382" alt="image" src="https://github.com/code-423n4/2024-01-decent/assets/104318932/53d700dc-897a-4fe6-bff6-daa0147d9ada">
+
+</br>
+</br>
+
+✅  The smart contract's `_getCallParams` function prepares the necessary parameters to be used during a bridge operation. Here, the calculation of the amount of gas allocated for the process plays an important role.
+
+The amount of `100,000` gas determined by the `GAS_FOR_RELAY` constant is added to the gas need of the target chain specified by the `_dstGasForCall` parameter.
+
+Layer 2 solutions in particular (such as Optimism, Base) are known for higher gas costs. If the total amount of gas allocated is not sufficient, the risk of reverting the transaction increases. This may cause the contract to fail to provide its expected functionality and users' transactions to fail.
+
+
+```solidity
+
+lib/decent-bridge/src/DecentEthRouter.sol:
+   79  
+   80:     function _getCallParams(
+   81:         uint8 msgType,
+   82:         address _toAddress,
+   83:         uint16 _dstChainId,
+   84:         uint64 _dstGasForCall,
+   85:         bool deliverEth,
+   86:         bytes memory additionalPayload
+   87:     )
+   88:         private
+   89:         view
+   90:         returns (
+   91:             bytes32 destBridge,
+   92:             bytes memory adapterParams,
+   93:             bytes memory payload
+   94:         )
+   95:     {
+   96:         uint256 GAS_FOR_RELAY = 100000; // <= @audit
+   97:         uint256 gasAmount = GAS_FOR_RELAY + _dstGasForCall; // <= @audit
+   98:         adapterParams = abi.encodePacked(PT_SEND_AND_CALL, gasAmount);
+   99:         destBridge = bytes32(abi.encode(destinationBridges[_dstChainId]));
+  100:         if (msgType == MT_ETH_TRANSFER) {
+  101:             payload = abi.encode(msgType, msg.sender, _toAddress, deliverEth);
+  102:         } else {
+  103:             payload = abi.encode(
+  104:                 msgType,
+  105:                 msg.sender,
+  106:                 _toAddress,
+  107:                 deliverEth,
+  108:                 additionalPayload
+  109:             );
+  110:         }
+  111:     }
+
+```
+
+
+
+Recommended Mitigation Step ; Converting the `GAS_FOR_RELAY` value to a dynamic structure instead of a fixed value. Allowing users or contract administrators to update this value taking into account gas costs specific to different networks.
+
+
+```diff
+function _getCallParams(
+    uint8 msgType,
+    address _toAddress,
+    uint16 _dstChainId,
+    uint64 _dstGasForCall,
+    bool deliverEth,
+    bytes memory additionalPayload
+)
+    private
+    view
+    returns (
+        bytes32 destBridge,
+        bytes memory adapterParams,
+        bytes memory payload
+    )
+{
+-   uint256 GAS_FOR_RELAY = 100000;
++   uint256 GAS_FOR_RELAY = getGasForRelay(_dstChainId);
+    uint256 gasAmount = GAS_FOR_RELAY + _dstGasForCall;
+    adapterParams = abi.encodePacked(PT_SEND_AND_CALL, gasAmount);
+    destBridge = bytes32(abi.encode(destinationBridges[_dstChainId]));
+    if (msgType == MT_ETH_TRANSFER) {
+        payload = abi.encode(msgType, msg.sender, _toAddress, deliverEth);
+    } else {
+        payload = abi.encode(
+            msgType,
+            msg.sender,
+            _toAddress,
+            deliverEth,
+            additionalPayload
+        );
+    }
+}
+
++ function getGasForRelay(uint16 _dstChainId) private view returns (uint256) {
+
++     if (_dstChainId == 1) { // Ethereum Mainnet
++         return 200000; 
++     } else if (_dstChainId == 56) { // BSC
++         return 150000; 
++     }
++     // default
++     return 100000;
++ }
+
+```
+
 
 
 
