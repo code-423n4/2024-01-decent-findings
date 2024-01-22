@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "al88nsk",
+  "risk": "3",
+  "title": "Missing access control for setRouter function in DcntEth contract",
+  "issueId": 223,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/223"
+}
