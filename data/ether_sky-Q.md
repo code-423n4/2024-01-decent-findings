@@ -88,3 +88,34 @@ function bridge() {
 }
 ```
 This is possible because the `router` has the ability to mint `DcntEth` tokens.
+
+[L-3] Users can use the protocol without paying fees.
+
+When users attempt to swap tokens using `swapAndExecute` or `bridgeAndExecute`, they should pay protocol fees.
+https://github.com/code-423n4/2024-01-decent/blob/07ef78215e3d246d47a410651906287c6acec3ef/src/UTB.sol#L115
+```
+function swapAndExecute(
+    SwapAndExecuteInstructions calldata instructions,
+    FeeStructure calldata fees,
+    bytes calldata signature
+)
+    public
+    payable
+    retrieveAndCollectFees(fees, abi.encode(instructions, fees), signature)
+{
+}
+```
+
+However, users can also swap tokens using the `receiveFromBridge` function, and they are not required to pay protocol fees.
+https://github.com/code-423n4/2024-01-decent/blob/07ef78215e3d246d47a410651906287c6acec3ef/src/UTB.sol#L311-L319
+```
+function receiveFromBridge(
+    SwapInstructions memory postBridge,
+    address target,
+    address paymentOperator,
+    bytes memory payload,
+    address payable refund
+) public {
+    _swapAndExecute(postBridge, target, paymentOperator, payload, refund);
+}
+```
