@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "0xPluto",
+  "risk": "3",
+  "title": "GAS_FOR_RELAY is hardcoded in DecentEthRouter.sol",
+  "issueId": 257,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/257"
+}
