@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "Giorgio",
+  "risk": "2",
+  "title": "`DecentEthRouter::onOFTReceived()` is not authorized to call `DecentBridgeExecutor::execute()`",
+  "issueId": 382,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/382"
+}
