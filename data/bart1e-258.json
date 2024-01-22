@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "bart1e",
+  "risk": "2",
+  "title": "`_executeWeth` will not clear approval in case `target.call` fails, which will allow anyone to steal `WETH` from it",
+  "issueId": 258,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/258"
+}
