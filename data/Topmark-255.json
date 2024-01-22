@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "Topmark",
+  "risk": "2",
+  "title": "Fund would be trapped in Contract due to Open Conditional statement before transfer",
+  "issueId": 255,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/255"
+}
