@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "bart1e",
+  "risk": "3",
+  "title": "Anyone can block all users from executing actions on a target chain, reedeming `ETH`, `WETH` and removing liquidity in `ETH` or `WETH`",
+  "issueId": 354,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/354"
+}
