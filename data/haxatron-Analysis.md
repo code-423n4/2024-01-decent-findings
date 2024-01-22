@@ -1,5 +1,5 @@
 # Purpose of Analysis
-The purpose of this analysis is to give an overview of the vulnerabilities found, aggregate them into common issues that surfaced into the protocol as well as to provide recommendation to prevent further mistakes.
+The purpose of this analysis is to give an overview of the vulnerabilities found, aggregate them into systemic issues that surfaced into the protocol as well as to provide recommendation to prevent further mistakes.
 
 # Summary of Key Findings
 
@@ -17,15 +17,15 @@ The purpose of this analysis is to give an overview of the vulnerabilities found
 
 More details can be found in the individual reports I made.
 
-# Common Issues
+# Systemic Issues and Recommendations
 
 1. **Missing Access Control**: Findings 1, 2 and 3 surface from the same mistake of missing access control on key functions.
 **Recommendation**: It is important that the team reviews privileged state-changing functions for access control. The team should also trace out the functions being executed during a bridge process and ensure all of them have adequate access control checks to prevent users from bypassing fees.
 
-2. **Funds send to the wrong address**: Findings 4, 5 and 6 surface from the wrong address being passed when sending funds. 
+2. **Funds sent to the wrong address**: Findings 4, 5 and 6 surface from the wrong address being passed when sending funds. 
 **Recommendation**: The team should review that the recipient of the funds, especially refunds and when the transaction fails halfway in the destination chain, is always the user's address or an address specifically provided by the user for refunds.
 
-# Further Issues
+# Further Issues and Comments
 
 **The incentive mechanism to provide WETH reserves for the DecentEthRouter is not in-scope and therefore has not been reviewed**: When a user wants to send a cross chain transaction, UTB will perform a series of steps (not important) before sending in ETH / WETH into the source router. 
 
@@ -47,7 +47,9 @@ When clarifying with the protocol team, they mentioned the following:
 
 These incentive mechanisms are however out-of-scope and have not been reviewed in this audit.
 
-**Recommendation**: These incentive contracts should either be reviewed in another audit or by the protocol team to ensure that these contracts function as intended and that users will be incentivised to place WETH to the reserves as these WETH reserves are crucial for the stability and functionality of the bridge.
+**Recommendation**: These incentive contracts should either be reviewed in another audit or by the protocol team to ensure that these contracts function as intended and that users will be incentivised to place WETH to the reserves, as these WETH reserves are crucial for the stability and functionality of the bridge.
+
+
 
 
 
