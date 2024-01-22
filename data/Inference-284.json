@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "Inference",
+  "risk": "2",
+  "title": "WETH/ETH are sent to the `from` address in a fallback case scenario",
+  "issueId": 284,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/284"
+}
