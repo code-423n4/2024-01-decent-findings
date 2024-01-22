@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "Topmark",
+  "risk": "2",
+  "title": "Faulty Code execution due to Silent Incomplete Function Implementation without Reversion",
+  "issueId": 297,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/297"
+}
