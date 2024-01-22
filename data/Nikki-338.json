@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "Nikki",
+  "risk": "3",
+  "title": "Return value of 0 from ecrecover function not checked in the function UTBFeeCollector.collectFees",
+  "issueId": 338,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/338"
+}
