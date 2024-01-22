@@ -25,9 +25,7 @@ More details can be found in the individual reports I made.
 
 # Further Issues
 
-**The incentive mechanism to provide WETH reserves for the DecentEthRouter is not in-scope and therefore has not been reviewed**: 
-
-When a user wants to send a cross chain transaction, UTB will perform a series of steps (not important) before sending in ETH / WETH into the source router. 
+**The incentive mechanism to provide WETH reserves for the DecentEthRouter is not in-scope and therefore has not been reviewed**: When a user wants to send a cross chain transaction, UTB will perform a series of steps (not important) before sending in ETH / WETH into the source router. 
 
 The source router then stores the ETH / WETH into the WETH reserves and sends the dcntEth from the source router's dcntEth reserves to the destination router.
 
@@ -43,11 +41,13 @@ As such, for the continued functionality of the bridge there must be some WETH r
 
 When clarifying with the protocol team, they mentioned the following:
 
-> assume third parties are incentivized to provide reserve with offchain contracts
+> assume third parties are incentivized to provide reserves with offchain contracts
 
-These incentive mechanisms is out-of-scope and have not been reviewed in this audit.
+These incentive mechanisms are however out-of-scope and have not been reviewed in this audit.
 
-**Recommendation**: These incentive contracts should be either reviewed in another audit or reviewed carefully by the protocol team to ensure that these contracts function as intended and that users will be incentivised to place WETH to the reserves as these WETH reserves are crucial for the stability and functionality of the bridge.
+**Recommendation**: These incentive contracts should either be reviewed in another audit or by the protocol team to ensure that these contracts function as intended and that users will be incentivised to place WETH to the reserves as these WETH reserves are crucial for the stability and functionality of the bridge.
+
+
 
 ### Time spent:
 10 hours
