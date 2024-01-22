@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "Soliditors",
+  "risk": "3",
+  "title": "'receiveFromBridge' function in UTB contract lacks of access control, allowing any user to swap and execute without paying fees.",
+  "issueId": 194,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/194"
+}
