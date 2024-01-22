@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "cheatc0d3",
+  "risk": "2",
+  "title": "Fee-on-transfer tokens not handled correctly",
+  "issueId": 380,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/380"
+}
