@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "0xAadi",
+  "risk": "2",
+  "title": "Delayed Transaction Execution Due to Lack of Deadline in Swap Functions in `UniSwapper` Contract",
+  "issueId": 253,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/253"
+}
