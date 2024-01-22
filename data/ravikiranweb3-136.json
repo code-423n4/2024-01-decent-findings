@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "ravikiranweb3",
+  "risk": "3",
+  "title": "UTBExecutor::execute implementation is vulnerable to manipulation as it lacks validations of input params.",
+  "issueId": 136,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/136"
+}
