@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "NentoR",
+  "risk": "2",
+  "title": "Fee logic in `UTB::swapAndExecute()` and `UTB::bridgeAndExecute()` can be bypassed by callers",
+  "issueId": 157,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/157"
+}
