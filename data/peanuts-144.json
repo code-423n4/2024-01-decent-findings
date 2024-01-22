@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "peanuts",
+  "risk": "3",
+  "title": "DcntEth.setRouter function has no modifier, anyone can mint any amount of dcntETH and drain the router contract",
+  "issueId": 144,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/144"
+}
