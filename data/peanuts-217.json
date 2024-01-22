@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "peanuts",
+  "risk": "3",
+  "title": "UTB.receiveFromBridge does not have a adapter modifier",
+  "issueId": 217,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/217"
+}
