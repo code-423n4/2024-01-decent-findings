@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "deth",
+  "risk": "3",
+  "title": "DecentEthRouter.sol#_bridgeWithPayload() - Any refunded ETH (native token) will be refunded to the DecentBridgeAdapter, making them stuck",
+  "issueId": 262,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/262"
+}
