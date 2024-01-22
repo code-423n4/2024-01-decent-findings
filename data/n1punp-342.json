@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "n1punp",
+  "risk": "3",
+  "title": "UTBExecutor.execute does not check for call success -> the `target` contract may not successfully execute the payload.",
+  "issueId": 342,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/342"
+}
