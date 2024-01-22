@@ -22,6 +22,16 @@ https://github.com/decentxyz/decent-bridge/blob/7f90fd4489551b69c20d11eeecb17a3f
         } else {
             weth.transferFrom(msg.sender, address(this), _amount);
 >>>            gasValue = msg.value;
+
+>>> dcntEth.sendAndCall{value: gasValue}(
+            address(this), // from address that has dcntEth (so DecentRouter)
+            _dstChainId,
+            destinationBridge, // toAddress
+            _amount, // amount
+            payload, //payload (will have recipients address)
+            _dstGasForCall, // dstGasForCall
+            callParams // refundAddress, zroPaymentAddress, adapterParams
+        );
         }
 ```
 ```solidity
