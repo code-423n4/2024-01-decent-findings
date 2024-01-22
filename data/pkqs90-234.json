@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "pkqs90",
+  "risk": "2",
+  "title": "receiveFromBridge() function can be used by users to bypass fee collection and signature check",
+  "issueId": 234,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/234"
+}
