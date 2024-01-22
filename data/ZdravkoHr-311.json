@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "ZdravkoHr",
+  "risk": "2",
+  "title": "Missing deadline parameter when doing swaps on Uniswap",
+  "issueId": 311,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/311"
+}
