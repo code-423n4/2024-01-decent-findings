@@ -579,6 +579,26 @@ function bridge(
 }
 ```
 
+</br>
+</br>
+
+
+✅  The `DcntEth.setRouter()` function can be run without any restrictions and the router address can be updated , access control must be added, and during the execution of functions such as `mint()` and `burn()`, their working logic can be disrupted by running them from the front. Add to `onlyOwner` modifier;
+
+
+```solidity
+lib/decent-bridge/src/DcntEth.sol:
+  16  
+  17:     /**
+  18:      * @param _router the decentEthRouter associated with this eth
+  19:      */
+  20:     function setRouter(address _router) public {
+  21:         router = _router;
+  22:     }
+```
+
+
+```
 
 
 ### Time spent:
