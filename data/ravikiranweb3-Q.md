@@ -19,3 +19,15 @@ Incase the swapper did not exist, it would revert.
 
 #### 7) UTB::receiveFromBridge
 In the receiveFromBridge() function, validate the refund to be an EOA. If he refund happens to be a smart contract that does not accept ether, the transaction will revert. 
+
+#### 8) DecentBridgeExecutor::receive/fallback
+Any ether received directly into the DecentBridgeExecutor cannot be with drawn.
+It could be locked permanently in the contract.
+
+#### 9) DecentEthRouter::receive/fallback
+Any ether received directly into the DecentEthRouter cannot be with drawn.
+It could be locked permanently in the contract.
+
+#### 10) UTB::receive/fallback
+Any ether received directly into the UTB cannot be with drawn.
+It could be locked permanently in the contract.
