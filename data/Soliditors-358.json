@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "Soliditors",
+  "risk": "3",
+  "title": "Slippage is fixed to 0.06% for the bridge operation, which might cause DOS of the bridging system if Stargate decides to increase its fees.",
+  "issueId": 358,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/358"
+}
