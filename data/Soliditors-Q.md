@@ -104,7 +104,16 @@ If this is indeed the expected behaviour, the code should be simplify, leaving o
     } 
 ```
 
-## [NC‑01]
+## [NC‑01] `receive` and `fallback` functions should be removed from UTB contract
+
+Decent protocol clearly indicates in C4 that: 
+"Other than the UTBFeeCollector, and DcntEth, the contracts are not intended to hold on to any funds or unnecessary approvals. Any native value or erc20 flowing through the protocol should either get delivered or refunded."
+
+There is no valid reason to add ``receive` and `fallback` functions in UTB contract. Indeed, if ETH is sent to this contract, it will be stuck forever.
+
+These functions should be removed.
+
+## [NC‑03]
 
 
 ## [L‑01]
