@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "peanuts",
+  "risk": "2",
+  "title": "Users depositing liquidity into DecentEthRouter may not get their liquidity back due to the fractured liquidity concept.",
+  "issueId": 151,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/151"
+}
