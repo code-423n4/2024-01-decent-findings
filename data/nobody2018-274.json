@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "nobody2018",
+  "risk": "2",
+  "title": "If the token is USDT from mainnet, then all core functions will not work properly",
+  "issueId": 274,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/274"
+}
