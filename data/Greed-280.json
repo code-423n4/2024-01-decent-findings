@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "Greed",
+  "risk": "2",
+  "title": "Insuffisant checks in `UTBFeeCollector::collectFees()` could allow the `ecrecover()` function to accept an invalid signature",
+  "issueId": 280,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/280"
+}
