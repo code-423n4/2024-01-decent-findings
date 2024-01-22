@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "NentoR",
+  "risk": "2",
+  "title": "Lack of access control in `UTB::receiveFromBridge()` allows callers to use it to evade fees",
+  "issueId": 161,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/161"
+}
