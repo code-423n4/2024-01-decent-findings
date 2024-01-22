@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "Soliditors",
+  "risk": "3",
+  "title": "Tokens refunded by DecentBridgeExecutor can get lost or stolen",
+  "issueId": 281,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/281"
+}
