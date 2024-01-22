@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "th13vn",
+  "risk": "2",
+  "title": "Unexpected Behaviors in Fallback Function May Lead to Loss of User Funds",
+  "issueId": 209,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/209"
+}
