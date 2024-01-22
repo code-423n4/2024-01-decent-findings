@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "Soliditors",
+  "risk": "3",
+  "title": "'bridge' and 'bridgeWithPayload' functions in DecentEthRouter contract lack of access control, allowing anyone to use Decent bridge without paying due fees for the protocol. ",
+  "issueId": 279,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/279"
+}
