@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "ravikiranweb3",
+  "risk": "3",
+  "title": "DcntEth::setRouter() is a public access function which creates a critical vulnerability",
+  "issueId": 125,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/125"
+}
