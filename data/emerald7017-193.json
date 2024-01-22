@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "emerald7017",
+  "risk": "2",
+  "title": "Broken Transaction Sequencing in UniSwapper Refunds Enables Double Spends",
+  "issueId": 193,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/193"
+}
