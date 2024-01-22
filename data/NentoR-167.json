@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "NentoR",
+  "risk": "2",
+  "title": "Tokens can get stuck in contracts when bridge calls fail to pull them",
+  "issueId": 167,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/167"
+}
