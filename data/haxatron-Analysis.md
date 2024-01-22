@@ -13,6 +13,8 @@ The purpose of this analysis is to give an overview of the vulnerabilities found
 
 5. **Users will lose their cross-chain transaction if the destination router do not have enough WETH reserves.**: If there are not enough WETH reserves to support an incoming cross-chain transaction, the dcntEth token will be sent to the `to` address. However, in almost all cases, the `to` address is the address of the destination bridge adapter which cannot refund the tokens to the user.
 
+6. **Excess gas fee refund from the LayerZero cross-chain transaction gets refunded to the wrong address**: The excess gas fee from the LayerZero cross-chain transaction is refunded to the source chain bridge adapter instead of the user, with no way to retrieve it.
+
 More details can be found in the individual reports I made.
 
 # Common Issues
@@ -20,8 +22,8 @@ More details can be found in the individual reports I made.
 1. **Missing Access Control**: Findings 1, 2 and 3 surface from the same mistake of missing access control on key functions.
 **Recommendation**: It is important that the team reviews privileged state-changing functions for access control. The team should also trace out the functions being executed during a bridge process and ensure all of them have adequate access control checks to prevent users from bypassing fees.
 
-2. **Funds send to the wrong address**: Findings 4 and 5 surface from the wrong address being used when sending funds. 
-**Recommendation**: The team should review that the recipient of the funds, especially refunds when the transaction fails halfway, is always the user's address or an address specifically provided by the user for refunds.
+2. **Funds send to the wrong address**: Findings 4, 5 and 6 surface from the wrong address being passed when sending funds. 
+**Recommendation**: The team should review that the recipient of the funds, especially refunds and when the transaction fails halfway in the destination chain, is always the user's address or an address specifically provided by the user for refunds.
 
 # Further Issues
 
@@ -46,6 +48,8 @@ When clarifying with the protocol team, they mentioned the following:
 These incentive mechanisms are however out-of-scope and have not been reviewed in this audit.
 
 **Recommendation**: These incentive contracts should either be reviewed in another audit or by the protocol team to ensure that these contracts function as intended and that users will be incentivised to place WETH to the reserves as these WETH reserves are crucial for the stability and functionality of the bridge.
+
+
 
 
 
