@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "slylandro_star",
+  "risk": "3",
+  "title": "Anyone can call DcntEth.setRouter and drain DecentEthRouter via redeemEth/redeemWeth",
+  "issueId": 318,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/318"
+}
