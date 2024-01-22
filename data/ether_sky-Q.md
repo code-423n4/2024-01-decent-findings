@@ -119,3 +119,20 @@ function receiveFromBridge(
     _swapAndExecute(postBridge, target, paymentOperator, payload, refund);
 }
 ```
+
+[L-4] Missing `payable`
+
+The `execute` function in `UTBExecuto`r is not marked as `payable`.
+https://github.com/code-423n4/2024-01-decent/blob/011f62059f3a0b1f3577c8ccd1140f0cf3e7bb29/src/UTBExecutor.sol#L49
+```
+function execute(
+    address target,
+    address paymentOperator,
+    bytes memory payload,
+    address token,
+    uint amount,
+    address payable refund,
+    uint extraNative
+) public onlyOwner {
+}
+```
