@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "MrPotatoMagic",
+  "risk": "3",
+  "title": "Uncleared approval in swapExactOut() can brick swapping of certain tokens",
+  "issueId": 178,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/178"
+}
