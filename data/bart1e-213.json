@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "bart1e",
+  "risk": "2",
+  "title": "`UTBFeeCollector::collectFees` may accept any signatures when `signer` is not yet set",
+  "issueId": 213,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/213"
+}
