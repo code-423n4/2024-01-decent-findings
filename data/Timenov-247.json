@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "Timenov",
+  "risk": "3",
+  "title": "receiveFromBridge will fail if tokenIn == address(0)",
+  "issueId": 247,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/247"
+}
