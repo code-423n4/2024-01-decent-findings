@@ -12,3 +12,7 @@ variable can be declared as immutable to save gas.
 
 #### 5) DecentEthRouter::userDepositing && userIsWithdrawing modifiers
 Modifiers should be used to validate data, enforce access control, but state variable update should be done only in functions. This is not the best practices.
+
+#### 6) UTB::performSwap
+In the performSwap() function, check for existence of swapper based on swapInstructions.swapperId in the swappers map before operating on the object.
+Incase the swapper did not exist, it would revert.
