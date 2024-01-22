@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "MrPotatoMagic",
+  "risk": "3",
+  "title": "Native tokens locked in UniSwapper.sol contract can be stolen by an attacker",
+  "issueId": 137,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/137"
+}
