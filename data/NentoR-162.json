@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "NentoR",
+  "risk": "3",
+  "title": "Improperly calculated slippage in `StargateBridgeAdapter::callBridge()` may lead to swaps reverting",
+  "issueId": 162,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/162"
+}
