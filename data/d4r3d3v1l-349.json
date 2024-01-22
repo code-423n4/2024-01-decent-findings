@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "d4r3d3v1l",
+  "risk": "3",
+  "title": "No checks for non-zero output address when using ecrecover function",
+  "issueId": 349,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/349"
+}
