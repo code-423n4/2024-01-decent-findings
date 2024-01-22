@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "cheatc0d3",
+  "risk": "2",
+  "title": "Non-Compliant ERC20 tokens failing silently",
+  "issueId": 395,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/395"
+}
