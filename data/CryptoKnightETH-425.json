@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "CryptoKnightETH",
+  "risk": "3",
+  "title": "Underpaying/Overpaying of Stargate fee will occur in StargateBridgeAdapter.callBridge()",
+  "issueId": 425,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/425"
+}
