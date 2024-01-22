@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "niser93",
+  "risk": "2",
+  "title": "An attacker can force feeCollector to drain any amount of native token from UTB",
+  "issueId": 196,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/196"
+}
