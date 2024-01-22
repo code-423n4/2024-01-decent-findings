@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "iamandreiski",
+  "risk": "2",
+  "title": "Signature malleability in UTBFeeCollector can allow for a malicious user to compute a valid signature without knowing the owner's private key",
+  "issueId": 252,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/252"
+}
