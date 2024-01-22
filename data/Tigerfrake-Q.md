@@ -53,3 +53,24 @@ https://github.com/decentxyz/decent-bridge/blob/main/src%2FDecentEthRouter.sol#L
 
 ### Recommendation:
 We advise the special underscore (_) separator to be applied to it (i.e. 100000 would become 100_000) 
+
+# [05] Missing event record
+
+### Description:
+`Owner` can modify the configuration of the contract, but there is no event record, which is not conducive to community review.
+
+### Instances:
+https://github.com/code-423n4/2024-01-decent/blob/main/src%2FUTB.sol#L28-L30
+```Solidity
+    function setExecutor(address _executor) public onlyOwner {
+```
+https://github.com/code-423n4/2024-01-decent/blob/main/src%2FUTB.sol#L36-L38
+```Solidity
+    function setWrapped(address payable _wrapped) public onlyOwner {
+```
+https://github.com/code-423n4/2024-01-decent/blob/main/src%2FUTB.sol#L44-L46
+```Solidity
+    function setFeeCollector(address payable _feeCollector) public onlyOwner {
+```
+### Recommendation:
+Add events logs for easier review. 
