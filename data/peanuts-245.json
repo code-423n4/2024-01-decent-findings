@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "peanuts",
+  "risk": "2",
+  "title": "The amt2Bridge passed into Stargate Router calculates the stargate fees twice",
+  "issueId": 245,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/245"
+}
