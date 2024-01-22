@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "Soliditors",
+  "risk": "3",
+  "title": "DecentBridgeAdapter and StargateBridgeAdapter contracts don't handle properly the post bridge execution, with the risk of tokens stuck in the adapter contract on the pre bridge chain.",
+  "issueId": 324,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/324"
+}
