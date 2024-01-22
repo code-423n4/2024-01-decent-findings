@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "Greed",
+  "risk": "3",
+  "title": "User can drain all the native `ETH` of `DecentEthRouter` due to lack of access control on `DcntEth`",
+  "issueId": 288,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/288"
+}
