@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "0xabhay",
+  "risk": "3",
+  "title": "`UTB.sol::swapAndExecute` Function Reverts due To `UTBExecutor.sol::execute`  Owner-Only Modifier",
+  "issueId": 244,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/244"
+}
