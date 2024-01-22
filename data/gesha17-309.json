@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "gesha17",
+  "risk": "3",
+  "title": "Funds get locked in a bridge adapter on refund by lazerZero whenever a user calls bridgeAndExecute()",
+  "issueId": 309,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/309"
+}
