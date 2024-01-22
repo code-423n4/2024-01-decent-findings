@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "gesha17",
+  "risk": "2",
+  "title": "Signatures can be reused by users, allowing them to reuse transactions with cheaper fees",
+  "issueId": 381,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/381"
+}
