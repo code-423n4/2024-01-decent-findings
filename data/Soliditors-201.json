@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "Soliditors",
+  "risk": "3",
+  "title": "ETH might get stuck in UTB contract if a user sends more ether than required, because of lack of refund mechanism.",
+  "issueId": 201,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/201"
+}
