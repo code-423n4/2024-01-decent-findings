@@ -532,7 +532,52 @@ function _getCallParams(
 + }
 
 ```
+</br>
+</br>
 
+
+✅  To implement ERC-2612, you would need to update the bridge function as follows for gas saving
+
+```solidity
+// Parameters required for ERC-2612 permit function
+struct PermitParams {
+    uint256 nonce;
+    uint256 deadline;
+    uint8 v;
+    bytes32 r;
+    bytes32 s;
+}
+
+function bridge(
+    uint256 amt2Bridge,
+    // ... (other parameters)
+    PermitParams calldata permitParams // New parameter
+) public payable onlyUtb {
+    // ... (existing code)
+
+    if (!gasIsEth) {
+        // Permit call
+        IERC2612(bridgeToken).permit(
+            msg.sender,
+            address(this),
+            amt2Bridge,
+            permitParams.deadline,
+            permitParams.v,
+            permitParams.r,
+            permitParams.s
+        );
+
+        // Transfer call
+        IERC20(bridgeToken).transferFrom(
+            msg.sender,
+            address(this),
+            amt2Bridge
+        );
+    }
+
+    // ... (remaining code)
+}
+```
 
 
 
