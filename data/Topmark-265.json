@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "Topmark",
+  "risk": "3",
+  "title": "Swapper would Double spend Funds due to Approval outside of Native Token Interaction",
+  "issueId": 265,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/265"
+}
