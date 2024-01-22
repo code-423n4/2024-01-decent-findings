@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "0xPluto",
+  "risk": "3",
+  "title": "Use .transfer( ) to in DecentBridgeExecutor.sol _execteETH( ) function to transfer Ether to users",
+  "issueId": 164,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/164"
+}
