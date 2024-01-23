@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "0x11singh99",
+  "risk": "3",
+  "title": "Missing access control in `DcntEth::setRouter` function. Attacker can make his address router and can mint/burn unlimited `DcntEth` tokens.",
+  "issueId": 565,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/565"
+}
