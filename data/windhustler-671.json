@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "windhustler",
+  "risk": "2",
+  "title": "Hardcoding stargate fee can cause the transaction to permanently revert",
+  "issueId": 671,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/671"
+}
