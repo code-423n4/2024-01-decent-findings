@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "nmirchev8",
+  "risk": "2",
+  "title": "When postbridge swap tokenOut = address(0) (weth), transaction will always revert, because tries to double spend the tokens",
+  "issueId": 582,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/582"
+}
