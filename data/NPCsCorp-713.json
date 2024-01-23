@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "NPCsCorp",
+  "risk": "2",
+  "title": "Signatures can be replayed in fee collection, users can use old signatures to pay for less fees in case fees are increased",
+  "issueId": 713,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/713"
+}
