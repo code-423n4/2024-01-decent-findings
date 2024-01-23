@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "aariiif",
+  "risk": "2",
+  "title": "Lack of safeguards in the `receiveFromBridge` method, specifically when it passes the bridged payload into `_swapAndExecute` without any protective measures.",
+  "issueId": 560,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/560"
+}
