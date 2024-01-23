@@ -68,6 +68,23 @@ modifier onlyIfWeHaveEnoughReserves(uint256 amount) {
 }
 ```
 
+## [L-03] `UTBFeeCollector::collectFees` signature validation does not follow EIP-712
+
+https://github.com/code-423n4/2024-01-decent/blob/011f62059f3a0b1f3577c8ccd1140f0cf3e7bb29/src/UTBFeeCollector.sol#L49-L54
+
+The implementation of the signature verification in `UTBFeeCollector::collectFees` does not follow the `EIP-712` standard for Typed structured data hashing and signing, potentially leading to signature replay. 
+```javascript
+        bytes32 constructedHash = keccak256(
+            abi.encodePacked(BANNER, keccak256(packedInfo)) // --> message encoding does not follow EIP-712
+        );
+        (bytes32 r, bytes32 s, uint8 v) = splitSignature(signature);
+        address recovered = ecrecover(constructedHash, v, r, s);
+```
+Specifically, the absence of `domainSeparator` and `hashStruct`, along with the incorrect `BANNER` value (should be \x19\x01), may allow actors to re-use valid signatures to authorize transactions or actions repeatedly. Plus if external protocols are expected to work with signatures that conform to EIP-712, integration with such protocols may fail.
+
+### Recommandation
+Ensure that the signature verification process fully complies with [EIP-712](https://eips.ethereum.org/EIPS/eip-712), including the use of domainSeparator, hashStruct and the correct Banner value. The struct used in `packedInfo` consists of the concatenation of two structs `abi.encode(instructions, fees)` and their encoding should be constructed as exlained in the [section](https://eips.ethereum.org/EIPS/eip-712#definition-of-encodetype).
+
 ## [NC-01] Rename wrapped variable to wrappedNative for readibility
 We understand that the `IWETH wrapped` variable in the `UTB.sol` contract refers to the interface of the native token for whatever chain the contract is deployed on e.g on Mainnet it will be WETH and on Polygon, it will be WMATIC so it makes more sense to switch the naming from `wrapped` to `wrappedNative`
 
