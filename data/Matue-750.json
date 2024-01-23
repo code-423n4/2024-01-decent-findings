@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "Matue",
+  "risk": "2",
+  "title": "Lack of ACL in receiveFromBridge function",
+  "issueId": 750,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/750"
+}
