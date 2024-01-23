@@ -186,14 +186,6 @@ Assuming the preious fee or swapper id have now been invalidated , the user woul
 
 
 
-### [I-1]There is no situation where UTB::performSwap is set to false 
-
-**Description:** Both UTB::performSwap functions effectively do the same thing 
-
-**Impact:** Unnecessary usage of gas 
-
-**Recommended Mitigation:** The perfromSwaps functions houdl be limited to only one 
-
 
 
 
