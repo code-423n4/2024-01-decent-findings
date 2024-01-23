@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "EV_om",
+  "risk": "2",
+  "title": "Address size assumption in payload decoding can lead to issues in cross-chain compatibility",
+  "issueId": 709,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/709"
+}
