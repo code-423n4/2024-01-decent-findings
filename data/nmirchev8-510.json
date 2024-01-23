@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "nmirchev8",
+  "risk": "3",
+  "title": "`DecentBridge` will always refund to wrong address on destination chain, if transaction is reverted, because encoded `from` address doesn't correspond to the address provided by the participant",
+  "issueId": 510,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/510"
+}
