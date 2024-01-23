@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "0xPluto",
+  "risk": "3",
+  "title": "The _receiveAndWrapIfNeeded( ) and _sendToRecipient( ) functions in UniSwapper.sol does not check againts uninitialized 'wrapped' variable",
+  "issueId": 458,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/458"
+}
