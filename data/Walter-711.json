@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "Walter",
+  "risk": "3",
+  "title": "Attacker could steal every ERC20 token from the UTBExecutor contract",
+  "issueId": 711,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/711"
+}
