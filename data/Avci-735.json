@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "Avci",
+  "risk": "2",
+  "title": "cross reply is possible because there is no chain id in signed data",
+  "issueId": 735,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/735"
+}
