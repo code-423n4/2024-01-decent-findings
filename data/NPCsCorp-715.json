@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "NPCsCorp",
+  "risk": "3",
+  "title": "hardcoding the gas refundee of the lz calls will cause the users to lost the excess gas that should've been refunded to them",
+  "issueId": 715,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/715"
+}
