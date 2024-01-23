@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "Kaysoft",
+  "risk": "2",
+  "title": "Fees will be stuck in the UTB.sol forever",
+  "issueId": 507,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/507"
+}
