@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "vnavascues",
+  "risk": "2",
+  "title": "Use safe transfers on unknown ERC20s",
+  "issueId": 549,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/549"
+}
