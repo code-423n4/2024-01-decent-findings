@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "Topmark",
+  "risk": "3",
+  "title": "Timing of Balance Amount Calculation is Wrong in the DecentBridgeExecutor Contract",
+  "issueId": 444,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/444"
+}
