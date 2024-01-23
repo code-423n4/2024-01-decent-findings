@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "NPCsCorp",
+  "risk": "3",
+  "title": "Address to refund the tokens being bridged is incorrectly assigned and will cause users to lose their funds in case the bridge execution fails in the destination chain.",
+  "issueId": 720,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/720"
+}
