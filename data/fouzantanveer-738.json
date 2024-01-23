@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "fouzantanveer",
+  "risk": "2",
+  "title": "Exposure to Market Volatility and MEV Risks Due to Absence of User-Defined Deadlines in swapExactOut() Transactions",
+  "issueId": 738,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/738"
+}
