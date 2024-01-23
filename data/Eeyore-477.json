@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "Eeyore",
+  "risk": "2",
+  "title": "Approval is not zeroed at the end of `execute()` function execution in the `UTBExecutor` contract",
+  "issueId": 477,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/477"
+}
