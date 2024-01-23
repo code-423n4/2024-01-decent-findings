@@ -136,3 +136,33 @@ function execute(
 ) public onlyOwner {
 }
 ```
+
+[L-5] Unable to invoke the `receiveFromBridge` function from `DecentBridgeExecutor` properly.
+
+If `gasCurrencyIsEth` and `deliverEth` are both `true` in the `execute` function, the `_executeEth` function is called. 
+In this function, we perform a withdrawal of `WETH` and send `ETH` to the `Bridge Adapter`.
+https://github.com/decentxyz/decent-bridge/blob/7f90fd4489551b69c20d11eeecb17a3f564afb18/src/DecentBridgeExecutor.sol#L61
+```
+function _executeEth() {
+    weth.withdraw(amount);
+    (bool success, ) = target.call{value: amount}(callPayload);
+}
+```
+
+However, in the `receiveFromBridge` function, we only accept `ERC20` tokens.
+https://github.com/code-423n4/2024-01-decent/blob/011f62059f3a0b1f3577c8ccd1140f0cf3e7bb29/src/bridge_adapters/DecentBridgeAdapter.sol#L139-L143
+```
+function receiveFromBridge() {
+    IERC20(swapParams.tokenIn).transferFrom(
+        msg.sender,
+        address(this),
+        swapParams.amountIn
+    );
+}
+```
+
+
+
+
+
+
