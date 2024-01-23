@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "rouhsamad",
+  "risk": "2",
+  "title": "UTB::receiveFromBridge function does not check whether swap and execute parameters are signed by Decent Protocol or not",
+  "issueId": 646,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/646"
+}
