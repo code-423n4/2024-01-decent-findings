@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "Walter",
+  "risk": "3",
+  "title": "``UTBExector`` contract tokens balance could be fully drained",
+  "issueId": 650,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/650"
+}
