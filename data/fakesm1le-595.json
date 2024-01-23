@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "fakesm1le",
+  "risk": "3",
+  "title": "UTBExecutor.executor does not check return value from ransferFrom",
+  "issueId": 595,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/595"
+}
