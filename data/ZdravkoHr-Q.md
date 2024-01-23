@@ -25,3 +25,6 @@ Some chains, like Polygon, do not support the `PUSH0` opcode which is being used
 ```solidity
         uint256 GAS_FOR_RELAY = 100000;
 ```
+
+# [LOW-5] DecentEthRouter does not check WETH decimals
+In the functions for adding and removing liquidity, DecentEthRouter is not checking if WETH decimals are 18. This can be problematic if deployed on some chain where WETH is with different decimals because decentToken is with 18.
