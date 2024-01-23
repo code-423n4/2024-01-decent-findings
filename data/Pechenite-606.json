@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "Pechenite",
+  "risk": "2",
+  "title": "Removing an already added `swappers` and `bridge adapters` contract address in UTB.sol is not possible",
+  "issueId": 606,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/606"
+}
