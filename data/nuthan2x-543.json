@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "nuthan2x",
+  "risk": "2",
+  "title": "`UTB::swapAndExecute` doesn't refund excess sent ether",
+  "issueId": 543,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/543"
+}
