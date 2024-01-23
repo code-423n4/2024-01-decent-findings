@@ -18,3 +18,10 @@
 
 # [LOW-3] `PUSH0` is not supported on some chains
 Some chains, like Polygon, do not support the `PUSH0` opcode which is being used when contracts are compiled with 0.8.20 or above.
+
+# [LOW-4] Hardcoded relay gas
+[`DecentEthRouter._getCallParams()`](https://github.com/decentxyz/decent-bridge/blob/7f90fd4489551b69c20d11eeecb17a3f564afb18/src/DecentEthRouter.sol#L96) has the gas value for the relay hardcoded. This is bad because if the gas costs change in the future, the protocol may stop work correctly.
+
+```solidity
+        uint256 GAS_FOR_RELAY = 100000;
+```
