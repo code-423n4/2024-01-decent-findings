@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "Shaheen",
+  "risk": "3",
+  "title": "Refunds from LayerZero will be sent to the incorrect address, leading to a loss of assets for the users and permanent freezing of funds in DecentBridgeAdapter.sol",
+  "issueId": 563,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/563"
+}
