@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "Aymen0909",
+  "risk": "3",
+  "title": "Users can bypass fees by calling `receiveFromBridge` to swap & execute",
+  "issueId": 639,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/639"
+}
