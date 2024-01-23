@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "0x11singh99",
+  "risk": "2",
+  "title": "Return value of low level `call` not checked in `UTBExecutor::execute` function. Which can result in failed transaction to be continued withour reverting.",
+  "issueId": 581,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/581"
+}
