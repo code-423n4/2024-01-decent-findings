@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "karanctf",
+  "risk": "2",
+  "title": "Value of native eth is not checked in UTBFeeCollector::collectFees()",
+  "issueId": 534,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/534"
+}
