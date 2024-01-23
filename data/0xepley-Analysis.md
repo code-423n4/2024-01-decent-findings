@@ -146,7 +146,12 @@ This domain model provides an overview of the key components  and how they are i
 # Sequence diagram of Important functions
 
 ## SwapAndExecute()
+
 [![Whats-App-Image-2024-01-23-at-10-59-13-PM.jpg](https://i.postimg.cc/qvx8chx0/Whats-App-Image-2024-01-23-at-10-59-13-PM.jpg)](https://postimg.cc/5XjYbtrk)
+
+## bridgeAndExecure()
+
+[![bridge.png](https://i.postimg.cc/rwbmh0bg/bridge.png)](https://postimg.cc/mPYBkDTF)
 
 ## e) Test analysis
 
@@ -285,6 +290,8 @@ Note: I didn't tracked the time, the time I mentioned is just an estimate
 
 ### Time spent:
 5 hours
+
+
 
 ### Time spent:
 5 hours
