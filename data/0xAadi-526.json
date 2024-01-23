@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "0xAadi",
+  "risk": "3",
+  "title": "The unchecked return values of the `call()` method in the `UTBExecutor` contract pose a potential risk of fund lock or incomplete operations in `swapAndExecute` or `bridgeAndExecute`.",
+  "issueId": 526,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/526"
+}
