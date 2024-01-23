@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "FORTIFYX",
+  "risk": "2",
+  "title": "Funds can be sent to a non-existing destination",
+  "issueId": 537,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/537"
+}
