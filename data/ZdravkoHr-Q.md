@@ -15,3 +15,6 @@
                 (refund.call{value: amount}(""));
  }
 ```
+
+# [LOW-3] `PUSH0` is not supported on some chains
+Some chains, like Polygon, do not support the `PUSH0` opcode which is being used when contracts are compiled with 0.8.20 or above.
