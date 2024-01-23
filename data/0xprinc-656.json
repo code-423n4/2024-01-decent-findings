@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "0xprinc",
+  "risk": "3",
+  "title": "User will not have to pay any fees while calling swapAndExecute and bridgeAndExecute if fee token is native Eth",
+  "issueId": 656,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/656"
+}
