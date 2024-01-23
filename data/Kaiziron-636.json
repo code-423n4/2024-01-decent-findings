@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "Kaiziron",
+  "risk": "2",
+  "title": "`bridgeAndExecute()` and `retrieveAndCollectFees()`  can be called by attackers because of the signature replay and signature malleability of ecrecover() in collectFees()",
+  "issueId": 636,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/636"
+}
