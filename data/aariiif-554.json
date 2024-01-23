@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "aariiif",
+  "risk": "2",
+  "title": "Malicious users could provide arbitrarily encoded bytes for swapPayload, leading to arbitrary token transfers via swappers.",
+  "issueId": 554,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/554"
+}
