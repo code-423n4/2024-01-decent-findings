@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "0xDemon",
+  "risk": "2",
+  "title": "If DcntEth is deployed on a chain other than EVM that has decimals less than 18 then its may lead to unexpected token divisibility issue",
+  "issueId": 576,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/576"
+}
