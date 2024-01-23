@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "xiao",
+  "risk": "3",
+  "title": "Some tokens charge transfer fees, which will cause the approved amount to be inconsistent with the actual transfer amount, resulting in the transfer being unable to be executed",
+  "issueId": 538,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/538"
+}
