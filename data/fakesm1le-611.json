@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "fakesm1le",
+  "risk": "2",
+  "title": "executor's execute might be DOSed leading to initaitor losing all transaction gas",
+  "issueId": 611,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/611"
+}
