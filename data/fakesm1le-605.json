@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "fakesm1le",
+  "risk": "3",
+  "title": "executor makes call without checking if succeded might result is lost funds",
+  "issueId": 605,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/605"
+}
