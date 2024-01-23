@@ -117,7 +117,32 @@ The transaction begins with the transfer of some tokens to the `DecentBridgeExec
 ##### Note: Please click on the image to enlarge it:
 <img width="1706" alt="image" src="https://github.com/code-423n4/2024-01-decent/assets/104318932/20c202a7-818f-4b2c-a5a4-f554f3439735">
 
+</br>
+</br>
+</br>
+</br>
 
+## UTB.sol - UniSwapper.sol  (Swap mechanism);
+
+
+1. **swapAndExecute**: This function is the entry point. It takes in instructions, fees, and a signature, then calls `_swapAndExecute`.
+
+2. **_swapAndExecute**: This private function performs the actual swap and executes a transaction with payment. It calls `performSwap` and then executes the transaction.
+
+3. **performSwap**: This function is overloaded; one version takes just the swap instructions, and the other also takes a boolean `retrieveTokenIn`. Both versions return the output token and amount. It also interacts with the `ISwapper` interface.
+
+4. **UniSwapper.updateSwapParams**: This external pure function updates swap parameters.
+
+5. **UniSwapper.swap**: This function performs the swap operation based on the swap payload. It calls different functions based on the swap type, either `swapNoPath`, `swapExactIn`, or `swapExactOut`.
+
+6. **UniSwapper.swapNoPath**: Swaps without a specified path.
+
+7. **UniSwapper.swapExactIn**: Swaps with the exact input amount.
+
+8. **UniSwapper.swapExactOut**: Swaps with the exact output amount.
+
+
+<img width="1533" alt="image" src="https://github.com/code-423n4/2024-01-decent/assets/104318932/2582b095-c365-49f1-9825-2148ab8f934e">
 
 
 ## c) Test analysis
@@ -598,8 +623,49 @@ lib/decent-bridge/src/DcntEth.sol:
 ```
 
 
-```
 
+✅  The `deadline` parameter specifies the validity period of a token exchange. Usually, `block.timestamp` (the timestamp of the current block) and a timeout period (for example, 20 minutes) are added as the `deadline` parameter. This allows the user to cancel their transaction if it does not occur within a certain period of time.
+
+Taking the `deadline` parameter as a comment in this function may cause the following effects:
+
+1. **Weak Protection Against Attacks**: Without `deadline`, the transaction remains valid for an indefinite period of time after confirmation. This means, especially when the market is very volatile, attackers can harm the user by delaying the transaction or issuing it at a certain time (for example, when prices change negatively).
+
+2. **User Experience**: No `deadline` means users' transactions can wait indefinitely. When market conditions change, users cannot prevent old and unwanted transactions from taking place.
+
+3. **Transaction Failure Risk**: If market conditions for a swap transaction change rapidly and `deadline` is not used, the transaction may fall outside market conditions and fail. Using `deadline` reduces this risk by ensuring that the transaction occurs within a certain time.
+
+
+```solidity
+src/swappers/UniSwapper.sol:
+  142  
+  143:     function swapExactOut(
+  144:         SwapParams memory swapParams,
+  145:         address receiver,
+  146:         address refundAddress
+  147:     ) public payable routerIsSet returns (uint256 amountIn) {
+  148:         swapParams = _receiveAndWrapIfNeeded(swapParams);
+  149:         IV3SwapRouter.ExactOutputParams memory params = IV3SwapRouter
+  150:             .ExactOutputParams({
+  151:                 path: swapParams.path,
+  152:                 recipient: address(this),
+  153:                 //deadline: block.timestamp,  //  ==> @ audit. 
+  154:                 amountOut: swapParams.amountOut,
+  155:                 amountInMaximum: swapParams.amountIn
+  156:             });
+  157: 
+  158:         IERC20(swapParams.tokenIn).approve(uniswap_router, swapParams.amountIn);
+  159:         amountIn = IV3SwapRouter(uniswap_router).exactOutput(params);
+  160: 
+  161:         // refund sender
+  162:         _refundUser(
+  163:             refundAddress,
+  164:             swapParams.tokenIn,
+  165:             params.amountInMaximum - amountIn
+  166:         );
+  167: 
+  168:         _sendToRecipient(receiver, swapParams.tokenOut, swapParams.amountOut);
+  169:     }
+```
 
 ### Time spent:
 22 hours
