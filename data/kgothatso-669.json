@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "kgothatso",
+  "risk": "3",
+  "title": "IERC20`  UTBExecutor :: execute `  function not checked for return values",
+  "issueId": 669,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/669"
+}
