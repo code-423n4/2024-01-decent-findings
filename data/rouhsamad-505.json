@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "rouhsamad",
+  "risk": "3",
+  "title": "Loss of funds when redeeming Decent tokens or removing ETH liquidity on chains that dont support ETH as gas/native token",
+  "issueId": 505,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/505"
+}
