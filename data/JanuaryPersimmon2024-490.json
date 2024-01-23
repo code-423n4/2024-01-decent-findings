@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "JanuaryPersimmon2024",
+  "risk": "3",
+  "title": "DcntEth.sol is missing an access control modifier for the setRouter function, and anyone can set the router to a malicious sttacker-controlled instance, and therefore enter the onlyRouter functions",
+  "issueId": 490,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/490"
+}
