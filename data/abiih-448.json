@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "abiih",
+  "risk": "3",
+  "title": "Lack of transferId Verification Allows an Attacker to Front-Run Bridge Transfers",
+  "issueId": 448,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/448"
+}
