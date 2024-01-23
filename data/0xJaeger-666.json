@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "0xJaeger",
+  "risk": "3",
+  "title": "Multisig wallets that call bridgeAndExecute() could cause tokens to be stolen",
+  "issueId": 666,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/666"
+}
