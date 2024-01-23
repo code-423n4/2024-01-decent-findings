@@ -161,8 +161,21 @@ function receiveFromBridge() {
 }
 ```
 
+[L-5] There's a possibility that some funds may become trapped in the `Bridge Adapter`.
 
-
+In the `_bridgeWithPayload` function, we set the `Bridge Adapter` as the `refund` recipient.
+https://github.com/decentxyz/decent-bridge/blob/7f90fd4489551b69c20d11eeecb17a3f564afb18/src/DecentEthRouter.sol#L171
+```
+function _bridgeWithPayload() {
+    ICommonOFT.LzCallParams memory callParams = ICommonOFT.LzCallParams({
+        refundAddress: payable(msg.sender),
+        zroPaymentAddress: address(0x0),
+        adapterParams: adapterParams
+    });
+}
+```
+Consequently, certain funds will be accumulated as fees within the `Bridge Adapter`. 
+There should be no remaining funds left in the Bridge Adapter in any case.
 
 
 
