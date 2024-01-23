@@ -1,0 +1,2 @@
+## 1. Better to use `abi.encode` instead of `abi.encodePacked` to save some gas in `UTBFeeCollector.sol/collectFees()`
+[Line containing `abi.encodePacked`](https://github.com/code-423n4/2024-01-decent/blob/main/src/UTBFeeCollector.sol#L50)
