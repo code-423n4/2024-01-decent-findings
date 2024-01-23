@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "nuthan2x",
+  "risk": "3",
+  "title": "`UTB::swapAndExecute` cannot execute the payload due to wrong access control implementation on `UTBExecutor::execute`",
+  "issueId": 570,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/570"
+}
