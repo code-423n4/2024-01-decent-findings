@@ -40,16 +40,80 @@ pragma solidity ^0.8.13;
 ```
 Note: Hardhat has introduced a feature or update to circumvent issues arising from the Shanghai hard fork (referred to as "Paris over Shanghai") which reflects an ongoing effort to maintain compatibility and ease of development across different Ethereum versions and forks. Despite these tools, it’s still crucial for developers to be mindful of the Solidity compiler version they use. Even with Hardhat's solutions, there may be scenarios where using a specific compiler version is necessary to ensure compatibility, particularly when dealing with multiple blockchains with differing levels of support for Ethereum's latest features. 
 
-## [L-03] Addressing transfer and send Limitations in zkSync
-According to "Additional Context" in the contest readme: 
+## [L-03] Enhancing Security and Reliability in Low-level Ether Transfers
+The use of low-level `call()` for transferring Ether presents risks, particularly when dealing with contracts lacking `receive()` or those intentionally designed to fail transactions via gas griefing leading to unnecessary DoS. To mitigate these risks, implementing a gas limit on `call()` could prevent gas griefing, while transitioning to Wrapped Ether (`weth`) offers a more robust and ERC20-compliant transfer method, avoiding issues with contracts not equipped to handle direct Ether transfers.
 
-"Will be deployed to most blockchains, can consider scope of blockchains to those supported by layerzero for now"
+For example, the following instance may be refactored as follows:
 
-While the use of `call` vs `transfer` will be considered as a protocol choice, using `transfer()` will ready revert on zkSync Era whether or not the `fallback()` or `receive()` function of the receiving contract implements overly complex logic limited by the 2300 gas stipend. Please visit the following link for further insight:
+https://github.com/code-423n4/2024-01-decent/blob/main//src/UTBExecutor.sol#L54-L54
 
-https://medium.com/coinmonks/gemstoneido-contract-stuck-with-921-eth-an-analysis-of-why-transfer-does-not-work-on-zksync-era-d5a01807227d
+```diff
+-                (refund.call{value: amount}(""));
++                assembly {
++                    // Transfer ETH to the recipient
++                    // Limit the call to 50,000 gas
++                    success := call(50000, refund, amount, 0, 0, 0, 0)
++                }
 
-"... the problem lies in the fact that zkSync Era is not fully compatible with the Ethereum Virtual Machine (EVM). Gas calculations on zkSync Era use a dynamic and divergent gas measurement method. Using transfer() on zkSync Era will exceed the 2300 gas limit, causing the transaction to revert automatically."
++                // If the transfer failed:
++                if (!success) {
++                    // Wrap as WETH
++                    weth.deposit{ value: amount }();
 
++                    // Transfer WETH instead
++                    weth.transfer(refund, amount);
++                }
+```  
+## [L-04] Over-Approval Risks in DecentBridgeAdapter.bridge()
+`DecentBridgeAdapter.bridge()` approves the router to spend `amt2Bridge` amount of `bridgeToken` on behalf of the `DecentBridgeAdapter` contract when `swapParams.amountIn` is the actual amount involved:
 
-    
+https://github.com/code-423n4/2024-01-decent/blob/main/src/bridge_adapters/DecentBridgeAdapter.sol#L114-L124
+
+```solidity
+            IERC20(bridgeToken).approve(address(router), amt2Bridge);
+        }
+
+        router.bridgeWithPayload{value: msg.value}(
+            lzIdLookup[dstChainId],
+            destinationBridgeAdapter[dstChainId],
+            swapParams.amountIn,
+            false,
+            dstGas,
+            bridgePayload
+        );
+```
+In `DecentEthRouter._bridgeWithPayload()`, the amount that is being transferred is `swapParams.amountIn` (where _amount is equivalent to swapParams.amountIn in the context of the bridge operation):
+
+https://github.com/decentxyz/decent-bridge/blob/7f90fd4489551b69c20d11eeecb17a3f564afb18/src/DecentEthRouter.sol#L181
+
+```solidity
+            weth.transferFrom(msg.sender, address(this), _amount);
+```
+If `amt2Bridge` is greater than `swapParams.amountIn`, then the approval given is more than what is actually needed for the operation. This scenario is typically referred to as "over-approval".
+
+Over-approval in itself is not a direct security vulnerability, but it can lead to potential risks. If the router or any entity with control over the router becomes malicious or is compromised, they could potentially use this excess approval to transfer more tokens than necessary for the intended operation, up to the approved amount (`amt2Bridge`).
+
+As a best practice in smart contract development, it's generally recommended to approve only the necessary amount for a transaction. This minimizes risks and follows the principle of least privilege. In this case, adjusting the approval to `swapParams.amountIn` would be more aligned with this best practice, assuming `swapParams.amountIn` is always less than or equal to `amt2Bridge`.
+
+## [L-05] Best Practices on Refund Mechanism
+In Solidity, implementing a robust and secure refund mechanism is crucial, particularly when interacting with arbitrary external addresses. The practice of not checking the return value of a low-level call poses significant risks as evidenced in the following instances:
+
+https://github.com/code-423n4/2024-01-decent/blob/main/src/UTBExecutor.sol
+
+```solidity
+54:                (refund.call{value: amount}(""));
+
+67:                (refund.call{value: extraNative}(""));
+```
+Much as the function NatSpec indicates that `refund` is typically the EOA that initiated the transaction, `refund` could also be a contract. This approach can lead to failed refunds without notice if the recipient is a contract with complex behaviors or insufficient gas. Moreover, ignoring the return status of such calls can exacerbate vulnerabilities like reentrancy attacks. Hence, it's advised to always check the return value of `.call`, potentially using `require` or `if` to revert the transaction on failure, or alternatively, log the failure with an event. Implementing these best practices ensures greater reliability and security in handling refunds within smart contracts.
+
+## [L-06] The Impacts of Omitting Deadline in Uniswap Transactions
+In Uniswap transactions, the deadline parameter serves as a critical safeguard, setting a specific timestamp until which a transaction remains valid. Omitting this parameter, as shown in the instance below, carries significant implications. 
+
+https://github.com/code-423n4/2024-01-decent/blob/main/src/swappers/UniSwapper.sol#L153
+
+```solidity
+                //deadline: block.timestamp,
+
+```
+Primarily, it increases susceptibility to front-running attacks, where malicious actors capitalize on seeing pending transactions and act in ways that unfavorably alter market conditions before the transaction is executed. Additionally, without a deadline, a transaction may execute under drastically different market conditions than anticipated, due to the inherent volatility of cryptocurrency markets. This removal of temporal constraints means the transaction can theoretically be executed at any point in the future, introducing uncertainty of unfavorable prices and potential financial risks. Therefore, while there might be niche scenarios where excluding a deadline is intentional, its omission generally represents a substantial deviation from standard safe trading practices in decentralized finance.
