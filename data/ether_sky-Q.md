@@ -161,7 +161,7 @@ function receiveFromBridge() {
 }
 ```
 
-[L-5] There's a possibility that some funds may become trapped in the `Bridge Adapter`.
+[L-6] There's a possibility that some funds may become trapped in the `Bridge Adapter`.
 
 In the `_bridgeWithPayload` function, we set the `Bridge Adapter` as the `refund` recipient.
 https://github.com/decentxyz/decent-bridge/blob/7f90fd4489551b69c20d11eeecb17a3f564afb18/src/DecentEthRouter.sol#L171
