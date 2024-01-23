@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "DarkTower",
+  "risk": "2",
+  "title": "`IV3SwapRouter` of the `swap-router-contracts` lib lacks deadline checks which can cause timing execution issues",
+  "issueId": 601,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/601"
+}
