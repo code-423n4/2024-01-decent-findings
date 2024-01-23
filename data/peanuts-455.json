@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "peanuts",
+  "risk": "2",
+  "title": "Setting the GAS_FOR_RELAY at 100000 is not recommended",
+  "issueId": 455,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/455"
+}
