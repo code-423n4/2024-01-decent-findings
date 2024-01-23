@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "Topmark",
+  "risk": "2",
+  "title": "Wrong Amout Approval For Target Address in DecentBridgeExecutor Contract",
+  "issueId": 450,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/450"
+}
