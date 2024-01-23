@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "karanctf",
+  "risk": "3",
+  "title": "Signature Malleability due improper handling of s value in v, r, s in UTBFeecollection.sol",
+  "issueId": 588,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/588"
+}
