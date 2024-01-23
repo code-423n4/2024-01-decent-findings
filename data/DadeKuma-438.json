@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "DadeKuma",
+  "risk": "2",
+  "title": "It's not possible to `execute` a payment transaction with some `extraNative`",
+  "issueId": 438,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/438"
+}
