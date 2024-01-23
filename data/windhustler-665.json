@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "windhustler",
+  "risk": "3",
+  "title": "Permanent loss of tokens if swap data gets outdated",
+  "issueId": 665,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/665"
+}
