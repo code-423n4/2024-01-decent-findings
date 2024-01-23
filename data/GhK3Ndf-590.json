@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "GhK3Ndf",
+  "risk": "3",
+  "title": "Missing access control on UTB:receiveFromBridge allows UTB swaps to be executed while bypassing fee/swap instruction signature verification. ",
+  "issueId": 590,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/590"
+}
