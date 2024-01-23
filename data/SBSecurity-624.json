@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "SBSecurity",
+  "risk": "3",
+  "title": "Shared decimals of dcntETH token is hardcoded and should lead maximum bridge amount of uint64.max tokens",
+  "issueId": 624,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/624"
+}
