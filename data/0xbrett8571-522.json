@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "0xbrett8571",
+  "risk": "2",
+  "title": "UniSwapper's `swapExactIn()` Fails to Refund Users on Revert, Permanently Locking Funds",
+  "issueId": 522,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/522"
+}
