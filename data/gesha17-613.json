@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "gesha17",
+  "risk": "2",
+  "title": "Transactions may revert because the protocol does not account for Stargates rebalancing fees, wasting gas and opening a sandwich-dos attack vector",
+  "issueId": 613,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/613"
+}
