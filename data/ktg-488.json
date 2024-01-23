@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "ktg",
+  "risk": "2",
+  "title": "Function performSwap's validation of msg.value does not take into account the fees spent ",
+  "issueId": 488,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/488"
+}
