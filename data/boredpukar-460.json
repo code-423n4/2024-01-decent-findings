@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "boredpukar",
+  "risk": "3",
+  "title": "Anyone can set the router in DcntEth contract due to lack of access control",
+  "issueId": 460,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/460"
+}
