@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "0xDemon",
+  "risk": "2",
+  "title": "UTBExecutor::execute using low level call to arbitrary address that lead to gas griefing attack and DoS",
+  "issueId": 574,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/574"
+}
