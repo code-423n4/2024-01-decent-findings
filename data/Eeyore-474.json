@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "Eeyore",
+  "risk": "2",
+  "title": "Different deployment addresses of `DecentBridgeAdapter` contract can lead to funds loss in case of a refund made in the `DecentBridgeExecutor` contract",
+  "issueId": 474,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/474"
+}
