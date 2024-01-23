@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "NPCsCorp",
+  "risk": "3",
+  "title": "An attacker can hijack any ERC777 tokens flowing through the protocol and cause DoS of any operation involving ERC777 tokens",
+  "issueId": 640,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/640"
+}
