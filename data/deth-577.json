@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "deth",
+  "risk": "3",
+  "title": "DecentEthRouter.sol#onOFTReceived() - Malicious users can force incoming tx to onOFTReceived, to send dcntEth to the DecentBridgeAdapter on the destination chain, which will stuck the tokens in the contract",
+  "issueId": 577,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/577"
+}
