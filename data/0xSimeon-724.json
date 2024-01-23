@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "0xSimeon",
+  "risk": "3",
+  "title": "Missing access control on critical router function means anyone can set the router to an arbitrary address",
+  "issueId": 724,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/724"
+}
