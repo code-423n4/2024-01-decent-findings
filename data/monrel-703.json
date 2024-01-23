@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "monrel",
+  "risk": "3",
+  "title": "Router could be drained due to re-entrancy",
+  "issueId": 703,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/703"
+}
