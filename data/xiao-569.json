@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "xiao",
+  "risk": "3",
+  "title": "Attacker use payload to perform call injection attacks to steal funds",
+  "issueId": 569,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/569"
+}
