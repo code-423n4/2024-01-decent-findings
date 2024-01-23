@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "Aymen0909",
+  "risk": "3",
+  "title": "Incorrect Refund Amount Calculation in `swapNoPath` Function",
+  "issueId": 719,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/719"
+}
