@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "Timepunk",
+  "risk": "2",
+  "title": "Unchecked call to refund address can lead to Native tokens not to be refunded",
+  "issueId": 498,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/498"
+}
