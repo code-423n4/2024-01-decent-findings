@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "ZdravkoHr",
+  "risk": "2",
+  "title": "Smart contracts interacting with the protocol may lose their refunds",
+  "issueId": 631,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/631"
+}
