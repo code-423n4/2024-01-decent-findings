@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "aariiif",
+  "risk": "2",
+  "title": "Lack of Sanitization of UTB Payloads Enables Downstream Contract Exploitation",
+  "issueId": 552,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/552"
+}
