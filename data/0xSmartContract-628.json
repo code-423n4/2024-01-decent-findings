@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "0xSmartContract",
+  "risk": "2",
+  "title": "For token transfer (approve) must be given before token transfer (transferFrom)",
+  "issueId": 628,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/628"
+}
