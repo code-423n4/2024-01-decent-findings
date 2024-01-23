@@ -89,8 +89,19 @@ https://github.com/decentxyz/decent-bridge/blob/7f90fd4489551b69c20d11eeecb17a3f
 ```solidity
             weth.transferFrom(msg.sender, address(this), _amount);
 ```
-If `amt2Bridge` is greater than `swapParams.amountIn`, then the approval given is more than what is actually needed for the operation. This scenario is typically referred to as "over-approval".
+If `amt2Bridge` is greater than `swapParams.amountIn`, then the approval given is more than what is actually needed for the operation. This scenario is typically referred to as "over-approval". Note: This will currently not affect anything as unlike [StargateBridgeAdapter.getBridgedAmount](https://github.com/code-423n4/2024-01-decent/blob/main/src/bridge_adapters/StargateBridgeAdapter.sol#L61-L67) that returns a reduced [newPostSwapParams.amountIn](https://github.com/code-423n4/2024-01-decent/blob/main/src/UTB.sol#L186-L188), `DecentBridgeAdapter.getBridgedAmount()` returns `amountOut` which is `amount2Bridge` by default:
 
+https://github.com/code-423n4/2024-01-decent/blob/main/src/bridge_adapters/DecentBridgeAdapter.sol#L73-L79
+
+```solidity
+    function getBridgedAmount(
+        uint256 amt2Bridge,
+        address /*tokenIn*/,
+        address /*tokenOut*/
+    ) external pure returns (uint256) {
+        return amt2Bridge;
+    }  
+```
 Over-approval in itself is not a direct security vulnerability, but it can lead to potential risks. If the router or any entity with control over the router becomes malicious or is compromised, they could potentially use this excess approval to transfer more tokens than necessary for the intended operation, up to the approved amount (`amt2Bridge`).
 
 As a best practice in smart contract development, it's generally recommended to approve only the necessary amount for a transaction. This minimizes risks and follows the principle of least privilege. In this case, adjusting the approval to `swapParams.amountIn` would be more aligned with this best practice, assuming `swapParams.amountIn` is always less than or equal to `amt2Bridge`.
@@ -117,3 +128,70 @@ https://github.com/code-423n4/2024-01-decent/blob/main/src/swappers/UniSwapper.s
 
 ```
 Primarily, it increases susceptibility to front-running attacks, where malicious actors capitalize on seeing pending transactions and act in ways that unfavorably alter market conditions before the transaction is executed. Additionally, without a deadline, a transaction may execute under drastically different market conditions than anticipated, due to the inherent volatility of cryptocurrency markets. This removal of temporal constraints means the transaction can theoretically be executed at any point in the future, introducing uncertainty of unfavorable prices and potential financial risks. Therefore, while there might be niche scenarios where excluding a deadline is intentional, its omission generally represents a substantial deviation from standard safe trading practices in decentralized finance.
+
+## [NC-01] Inefficient token handling in UTB.sol
+In UTB.sol, the `performSwap` function is private and only called internally within the contract, and considering that all internal calls to this function have the [retrieveTokenIn](https://github.com/code-423n4/2024-01-decent/blob/main/src/UTB.sol#L65) parameter hardcoded to true, it does seem unnecessary to have this as a parameter.
+
+https://github.com/code-423n4/2024-01-decent/blob/main/src/UTB.sol#L55
+
+```solidity
+        return performSwap(swapInstructions, true);
+```
+https://github.com/code-423n4/2024-01-decent/blob/main/src/UTB.sol#L82
+
+Specifically, the following `else if` may simply be replaced with `else` for cleaner code:
+
+```solidity
+        } else if (retrieveTokenIn) {
+```
+## [NC-02] Ensure Amount Redeemed is Available
+In the UTBFeeCollector smart contract, a suggested enhancement is the incorporation of balance checks within the `redeemFees` function. This modification ensures that the contract confirms the sufficiency of its holdings — whether in native Ether or ERC20 tokens — before proceeding with any transfer operations. Specifically, for Ether, it verifies the contract's Ether balance against the requested amount, and for ERC20 tokens, it checks the contract's token balance. By integrating these checks, the smart contract prevents the execution of transactions that would inevitably fail due to inadequate funds. 
+
+https://github.com/code-423n4/2024-01-decent/blob/main/src/UTBFeeCollector.sol#L69-L75
+
+```solidity
+    function redeemFees(address token, uint amount) public onlyOwner {
+        if (token == address(0)) {
+            payable(owner).transfer(amount);
+        } else {
+            IERC20(token).transfer(owner, amount);
+        }
+    }
+```
+## [NC-03] Activate the Optimizer
+Before deploying your contract, activate the optimizer when compiling using “solc --optimize --bin sourceFile.sol”. By default, the optimizer will optimize the contract assuming it is called 200 times across its lifetime. If you want the initial contract deployment to be cheaper and the later function executions to be more expensive, set it to “ --optimize-runs=1”. Conversely, if you expect many transactions and do not care for higher deployment cost and output size, set “--optimize-runs” to a high number.
+
+```
+module.exports = {
+solidity: {
+version: "0.8.0",
+settings: {
+optimizer: {
+  enabled: true,
+  runs: 1000,
+},
+},
+},
+};
+```
+Please visit the following site for further information:
+
+https://docs.soliditylang.org/en/v0.5.4/using-the-compiler.html#using-the-commandline-compiler
+
+Here's one example of instance on opcode comparison that delineates the gas saving mechanism:
+
+```
+for !=0 before optimization
+PUSH1 0x00
+DUP2
+EQ
+ISZERO
+PUSH1 [cont offset]
+JUMPI
+
+after optimization
+DUP1
+PUSH1 [revert offset]
+JUMPI
+```
+Disclaimer: There have been several bugs with security implications related to optimizations. For this reason, Solidity compiler optimizations are disabled by default, and it is unclear how many contracts in the wild actually use them. Therefore, it is unclear how well they are being tested and exercised. High-severity security issues due to optimization bugs have occurred in the past . A high-severity bug in the emscripten -generated solc-js compiler used by Truffle and Remix persisted until late 2018. The fix for this bug was not reported in the Solidity CHANGELOG. Another high-severity optimization bug resulting in incorrect bit shift results was patched in Solidity 0.5.6. Please measure the gas savings from optimizations, and carefully weigh them against the possibility of an optimization-related bug. Also, monitor the development and adoption of Solidity compiler optimizations to assess their maturity.
