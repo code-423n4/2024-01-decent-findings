@@ -419,4 +419,5 @@ function swapExactIn(...) {
 }
 ```
 
- 
+ ## [L-10] `swapParams` can be used to steal tokens because it accepts both `path` and tokenOut. 
+both are used in code and user can use different tokens depending on how profitable.
