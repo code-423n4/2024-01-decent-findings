@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "0xDemon",
+  "risk": "3",
+  "title": "Attacker can manipulate wETH balance that leads to DoS of the function and user loss amount of wETH",
+  "issueId": 572,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/572"
+}
