@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "NPCsCorp",
+  "risk": "2",
+  "title": "Missing deadline parameter to prevent swaps from being maliciously executed",
+  "issueId": 710,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/710"
+}
