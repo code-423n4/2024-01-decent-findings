@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "MrPotatoMagic",
+  "risk": "3",
+  "title": "Function receiveFromBridge() reverts when swapParams.tokenIn is native token",
+  "issueId": 674,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/674"
+}
