@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "0xbrett8571",
+  "risk": "2",
+  "title": "Arbitrary Payload Execution in UTBExecutor Enables Denial-of-Service and Potential Funds Draining",
+  "issueId": 519,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/519"
+}
