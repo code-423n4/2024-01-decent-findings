@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "0xhitman",
+  "risk": "2",
+  "title": "Left amount should be refunded in `UTB.performSwap` function",
+  "issueId": 481,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/481"
+}
