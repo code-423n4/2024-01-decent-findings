@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "Kaysoft",
+  "risk": "2",
+  "title": "The swap(...) function in Uniswapper.sol will revert if msg.value is sent because it is not payable",
+  "issueId": 441,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/441"
+}
