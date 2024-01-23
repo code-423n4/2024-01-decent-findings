@@ -6,6 +6,7 @@
 | [[L-1](#low-1)] | All Approvals should be cleared in `DecentEthExector::_executeWeth()`       | 1         |
 | [[L-2](#low-2)] | Add functionality to retryfailed Message from Layerzero                     | 1         |
 | [[L-3](#low-3)] | Contracts that holds tokens should have emergency withdraw tokens functions | 2         |
+| [[L-4](#low-4)] | There should be `deadline` for swap token calls                             | 1         |
 
 # Lows
 
@@ -102,3 +103,9 @@ To learn more about it, go to this [link](https://docs.layerzero.network/contrac
 ## L-3 Contracts that holds tokens should have emergency withdraw tokens functions <a id="low-3"></a>
 
 Contracts that holds ETH or ERC20 should have emergencey withdraw tokens function. Atleast `DecentEthRouter` should have it. So that if the tokens are stucked in the contract due to any reason then it can be retreived from the contract. Or if any unexpected token is sent than it can be recoverd as well. These functions are also helpful in case the contract is under attack. But there is no such function. It is recommended to add these functions.
+
+---
+
+## L-4 There should be `deadline` for swap token calls <a id="low-4"></a>
+
+Currently swap functions doesn't accept deadline parameter for swaps. This deadline ensures that the tokens are received within a fixed time period so that no unexpeted results comes from the swaps. But there is no such parameter used. It is recommeded to add the deadline as well
