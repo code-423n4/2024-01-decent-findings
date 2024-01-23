@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "FORTIFYX",
+  "risk": "2",
+  "title": "Signature malleability of EVM's `ecrecover` in `verify()`",
+  "issueId": 536,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/536"
+}
