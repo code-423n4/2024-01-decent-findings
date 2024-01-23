@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "deth",
+  "risk": "2",
+  "title": "DecentBridgeExecutor.sol#_executeWeth() - A malicious target inside ` UTBExecutor `  can send 1 wei of WETH to the DecentBridgeExecutor to force a revert",
+  "issueId": 742,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/742"
+}
