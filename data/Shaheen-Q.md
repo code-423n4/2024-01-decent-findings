@@ -66,8 +66,39 @@ Consider passing a deadline in both Uniswapper.swapExactIn() & Uniswapper.swapEx
         amountIn = IV3SwapRouter(uniswap_router).exactOutput(params);
 ```
 
-## L-05: sgReceive implementation doesn't handle failed situations
+## L-05: Swap on-chain slippage computation can open doors for sandwich attacks
+The protocol computes slippage `_minAmountLD` for the stargate router's swap function like this:
+```solidity
+            (amt2Bridge * (10000 - SG_FEE_BPS)) / 10000, // the min qty you would accept on the destination, fee is 6 bips
+```
+Which opens doors for sandwich attacks. Attackers can profit every user's swap TRX
+
+### Mitigation
+`_minAmountLD` should be user specified or computed off-chain
+
+## L-06: sgReceive implementation doesn't handle failed situations
 If sgReceive fails, it should emitCachedSwapSaved(_srcChainId, _srcAddress, _nonce, reason) and can be retried by calling clearCachedSwap function.
 
 ### Mitigation
 The sgReceive function should try/catch for failures & emit the CachedSwapSaved. And there should be a `clearCachedSwap()` function in the StartgateRouter to clear the failed messages: https://stargateprotocol.gitbook.io/stargate/stargate-composability/stargatecomposer.sol#sgreceive
+
+## L-07: Checks-Effects-Interaction pattern not followed by a modifier
+The `userIsWithdrawing` in the DecentEthRouter contract doesn't follows the CEI patter:
+```solidity
+    modifier userIsWithdrawing(uint256 amount) {
+        uint256 balance = balanceOf[msg.sender];
+        require(balance >= amount, "not enough balance");
+        _;
+        ///@audit-issue L reentrancy!? - burns the tokens + uses .transfer - safe but not future-proof
+        balanceOf[msg.sender] -= amount;
+    }
+```
+It should be like this:
+```solidity
+    modifier userIsWithdrawing(uint256 amount) {
+        uint256 balance = balanceOf[msg.sender];
+        require(balance >= amount, "not enough balance");
+        balanceOf[msg.sender] -= amount;
+        _;
+    }
+```
