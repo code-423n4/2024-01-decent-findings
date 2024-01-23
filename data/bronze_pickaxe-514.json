@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "bronze_pickaxe",
+  "risk": "2",
+  "title": "Due to incorrect `_sharedDecimals` usage, the maximum amount of `dcntEth` that can be bridged is capped",
+  "issueId": 514,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/514"
+}
