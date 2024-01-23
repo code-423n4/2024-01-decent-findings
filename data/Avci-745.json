@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "Avci",
+  "risk": "3",
+  "title": " ecrecover used but there is no 0(invalid ) check for response of erecover nor expiration of the signed data",
+  "issueId": 745,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/745"
+}
