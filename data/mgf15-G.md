@@ -1,4 +1,6 @@
-## G use assembly to set address
+## G-1 use assembly to set address
+
+By using assembly, we can directly interact with the storage slot of the storedAddress variable, allowing us to efficiently write and read address values in storage.
 
 `file:src/UTB.sol`
 ```solidity
@@ -50,11 +52,11 @@ function setRouter(address _router) public onlyOwner {
 `file:src/bridge_adapters/BaseAdapter.sol`
 ```solidity
 function setBridgeExecutor(address _executor) public onlyOwner {
-        bridgeExecutor = _exec`utor;
+        bridgeExecutor = _executor;
     }
 ```
 
-## G use assembly to set mapping
+## G-2 use assembly to set mapping
 
 `file:src/UTB.sol`
 ```solidity
@@ -120,7 +122,7 @@ bool gasIsEth;
 address bridgeToken;
 ```
 
-function getBridgedAmount can be removed
+## G-5 function getBridgedAmount can be removed
 
 `file:src/bridge_adapters/DecentBridgeAdapter.sol`
 ```solidity
@@ -132,7 +134,7 @@ function getBridgedAmount(
         return amt2Bridge;
     }
 ```
-## G-5 destinationBridgeAdapter[dstChainId] can be cached
+## G-6 destinationBridgeAdapter[dstChainId] can be cached
 
 `file:src/bridge_adapters/DecentBridgeAdapter.sol`
 ```solidity
