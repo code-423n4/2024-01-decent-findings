@@ -24,7 +24,7 @@
 | ID                | Title | Severity                  |
 | ----------------- | ----- | ------------------------- |
 | [L-01](#L-01)     | Missing `payable` Modifier in `UTBExecutor.sol#execute()` Function |  _Low_ |
-| [L-02](#L-02)     | Lack of Ether Withdrawal Mechanism in Contracts with receive/fallback Functions | _Low_ |
+| [L-02](#L-02)     | Lack of Ether Withdrawal Mechanism in Contracts with `receive/fallback` Functions | _Low_ |
 | [L-03](#L-03)     | Inheritance Issues in `UTBFeeCollector.sol` and `UTBExecutor.sol` | _Low_ |
 | [L-04](#L-04)     | Use `quoteLayerZeroFee` instead of sending entire msg.value as gas fee for swap call (Inefficient Gas Fee Calculation for Stargate Router Swap in `StargateBridgeAdapter.sol`) | _Low_ |
 | [NC-01](#NC-01)   | Optimization of `_receiveAndWrapIfNeeded()` in `UniSwapper.sol#swap()` | _Non Critical_ |
@@ -102,7 +102,7 @@ To resolve this issue, add the `payable` modifier to the `execute()` function de
 
 ---
 
-## <a name="L-02"></a>[L-02] Lack of Ether Withdrawal Mechanism in Contracts with receive/fallback Functions
+## <a name="L-02"></a>[L-02] Lack of Ether Withdrawal Mechanism in Contracts with `receive/fallback` Functions
 
 ### GitHub Links
 
@@ -188,6 +188,33 @@ Essentially, the current implementation in `StargateBridgeAdapter.sol` of sendin
 ### Recommendations
 
 - **Implement `quoteLayerZeroFee`**: Modify the `callBridge` function to use `quoteLayerZeroFee` from Stargate's router to calculate the exact gas fee required for the swap operation.
+
+---
+
+## <a name="L-05"></a>[L-05] Potential LayerZero Channel Blocking in Decent Protocol
+
+### GitHub Links
+
+- [UTB.sol Contract](https://github.com/code-423n4/2024-01-decent/blob/main/src/UTB.sol)
+- **Component**: `UTB.sol` and related contracts
+
+### Description
+
+The Decent Protocol, particularly in its `UTB.sol` contract and related components (especially the execute() functions), might be vulnerable to an issue where insufficient gas checks for LayerZero operations could allow an attacker to block the LayerZero channel. This vulnerability arises from the lack of minimum gas validation when sending messages through LayerZero, potentially leading to transaction reverts and blocking the message pathway between chains.
+
+### Proof of Concept
+
+- In the context of LayerZero operations, the sender specifies the gas amount for the Relayer to deliver the payload to the destination chain.
+- If the gas amount specified is insufficient, it could cause the transaction to revert on the destination chain, resulting in a blocked pathway and StoredPayload.
+- The `UTB.sol` contract and related components in the Decent Protocol handle cross-chain operations but do not explicitly include logic for minimum gas checks in LayerZero transactions.
+
+### Tools Used
+
+- Manual review of the `UTB.sol` contract and related components in the Decent Protocol.
+
+### Recommended Mitigation Steps
+
+**Implement Minimum Gas Checks**: Introduce logic in the `UTB.sol` contract and related components to validate the minimum gas required for LayerZero operations. This should cover all scenarios where LayerZero is used for cross-chain communication.
 
 ---
 
