@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "karanctf",
+  "risk": "3",
+  "title": "Signature replay on UTBFeeCollector::collectFees()",
+  "issueId": 541,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/541"
+}
