@@ -1,0 +1,8 @@
+{
+  "contest": 322,
+  "handle": "KeyKiril",
+  "risk": "2",
+  "title": "The signer address is not set appropriately before fee collection in the 'collectFees' function",
+  "issueId": 695,
+  "issueUrl": "https://github.com/code-423n4/2024-01-decent-findings/issues/695"
+}
