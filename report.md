@@ -944,7 +944,8 @@ When this function is called, the following will happen:
 6.  Step 6: The bridging process kickstarts and the execution flow is continued in the destination chain.
 
 Here is a graph of the execution flow
-![Execution flow](https://i.ibb.co/WWbKnLw/Screenshot-2024-01-23-at-5-11-25-PM.png)
+
+*Note: to view the provided image, please see the original submission [here](https://github.com/code-423n4/2024-01-decent-findings/issues/647).*
 
 ### The vulnerability & PoC
 
@@ -2632,7 +2633,7 @@ For this audit, 13 analysis reports were submitted by wardens. An analysis repor
 
 Decent is a blockchain-based project designed to simplify and enhance the experience of conducting transactions across multiple blockchain networks. In the ever-growing landscape of blockchain technology, one significant challenge users face is the fragmentation of liquidity and assets across different chains. Decent addresses this by enabling seamless transactions, such as payments or asset transfers, using funds or tokens from any blockchain network.
 
-[![flow-chart.png](https://i.postimg.cc/mZdRshXn/flow-chart.png)](https://postimg.cc/9zqsPXjP)
+*Note: to view the provided image, please see the original submission [here](https://github.com/code-423n4/2024-01-decent-findings/issues/667).*
 
 **Problem Solving and Need in Web3:**
 
@@ -2658,7 +2659,7 @@ Let's dive deeper into the architecture of Decent, focusing on the user interact
 
 ## Architecture
 
-[![advance.png](https://i.postimg.cc/KjK0CZ81/advance.png)](https://postimg.cc/y3HhZC9K)
+*Note: to view the provided image, please see the original submission [here](https://github.com/code-423n4/2024-01-decent-findings/issues/667).*
 
 Explanation:
 
@@ -2675,7 +2676,7 @@ Explanation:
 **
 ### Sequence Diagram of important functions
 
-[![UML.png](https://i.postimg.cc/xdVt7yKS/UML.png)](https://postimg.cc/K1QP3Tq9)
+*Note: to view the provided image, please see the original submission [here](https://github.com/code-423n4/2024-01-decent-findings/issues/667).*
 
 This diagram illustrates two key transaction flows in the Decent project:
 
